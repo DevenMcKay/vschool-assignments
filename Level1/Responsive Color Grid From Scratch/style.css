@@ -1,0 +1,48 @@
+/* Prevents wrap w/ percentage widths */
+* {
+  box-sizing: border-box; 
+  font-size: 0px;
+}
+
+.blocks {
+  border: 3px solid #fff;
+  height: 50px;
+  display: inline-block;
+}
+
+.shapes-border {
+  padding: 0;
+  border: 10px solid #fff:
+}
+
+.pink {
+  background-color: #F5C6D6;
+  width: 100%;
+}
+
+.hotpink {
+  background-color: #EE2E84;
+  width: 25%;
+}
+
+.skyblue {
+  background-color: #85CFD8;
+  width: 50%;
+}
+
+.lime {
+  background-color: #8DC63F;
+  width: 75%;
+}
+
+.orange {
+  background-color: #E76E34;
+  width: 25%;
+}
+
+@media only screen and (max-width: 768px) {
+  .blocks {
+    width: 100%;
+    border-width: 1px;
+  }
+} 

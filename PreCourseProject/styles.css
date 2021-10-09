@@ -1,0 +1,41 @@
+body {
+	background-image: url("img/bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+}
+
+.fire {
+	display: block;
+	margin: 20px auto;
+	width: 20%;
+}
+
+p {
+	background-color: rgba(238, 229, 229, 0.137);
+	color: black;
+	padding: 25px;
+	text-align: center;
+}
+
+.bottom {
+	display: block;
+	margin: 10px auto;
+	width: 0;
+}
+
+#left-btn {
+	margin: 20px 10px;
+	display: inline-block;
+	float: right;
+}
+
+#right-btn {
+	margin: 20px 10px;
+	display: inline-block;
+	float: left;
+}

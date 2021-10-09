@@ -1,0 +1,61 @@
+Last login: Wed Sep 22 09:32:57 on ttys000
+~ $ pwd
+/Users/devendechianti
+~ $ ls
+Applications	Documents	Library		Music		Public
+Desktop		Downloads	Movies		Pictures
+~ $ cd Desktop/VSchool 
+~/Desktop/VSchool $ mkdir "Level 1"        
+~/Desktop/VSchool $ cd L
+cd: no such file or directory: L
+~/Desktop/VSchool $ cd Level\ 1 
+~/Desktop/VSchool/Level 1 $ mkdir
+usage: mkdir [-pv] [-m mode] directory ...
+~/Desktop/VSchool/Level 1 $ mkdir terminal-practice
+~/Desktop/VSchool/Level 1 $ cd terminal-practice 
+~/Desktop/VSchool/Level 1/terminal-practice $ mkdir dir-one dir-two
+~/Desktop/VSchool/Level 1/terminal-practice $ cd dir-one 
+~/Desktop/VSchool/Level 1/terminal-practice/dir-one $ touch index.html app.js styles.css
+~/Desktop/VSchool/Level 1/terminal-practice/dir-one $ ls
+app.js		index.html	styles.css
+~/Desktop/VSchool/Level 1/terminal-practice/dir-one $ cp app.js index.html styles.css ../dir-two
+~/Desktop/VSchool/Level 1/terminal-practice/dir-one $ cd ../dir-two
+~/Desktop/VSchool/Level 1/terminal-practice/dir-two $ ls
+app.js		index.html	styles.css
+~/Desktop/VSchool/Level 1/terminal-practice/dir-two $ mv app.js main.js
+~/Desktop/VSchool/Level 1/terminal-practice/dir-two $ ls
+index.html	main.js		styles.css
+~/Desktop/VSchool/Level 1/terminal-practice/dir-two $ rm styles.css 
+~/Desktop/VSchool/Level 1/terminal-practice/dir-two $ ls
+index.html	main.js
+~/Desktop/VSchool/Level 1/terminal-practice/dir-two $ nano main.js
+~/Desktop/VSchool/Level 1/terminal-practice/dir-two $ nano main.js
+~/Desktop/VSchool/Level 1/terminal-practice/dir-two $ nano index.html
+~/Desktop/VSchool/Level 1/terminal-practice/dir-two $ nano main.js   
+~/Desktop/VSchool/Level 1/terminal-practice/dir-two $ nano index.html
+~/Desktop/VSchool/Level 1/terminal-practice/dir-two $ nano index.html
+
+  GNU nano 2.0.6              File: index.html                        Modified  
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="para1">Text</p>
+</body>
+<script src="main.js"></script>
+</html>
+
+
+
+
+
+
+
+^G Get Help  ^O WriteOut  ^R Read File ^Y Prev Page ^K Cut Text  ^C Cur Pos
+^X Exit      ^J Justify   ^W Where Is  ^V Next Page ^U UnCut Text^T To Spell

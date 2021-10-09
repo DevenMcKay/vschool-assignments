@@ -1,0 +1,14 @@
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+#square {
+  margin: 3rem auto 20% auto;
+  box-sizing: border-box;
+  background-color: whitesmoke;
+  width: 50vw;
+  height: 50vh;
+}
