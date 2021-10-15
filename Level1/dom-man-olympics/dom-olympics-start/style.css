@@ -29,9 +29,12 @@
 .right {
     align-self: flex-end;
     background-color: lightblue;
+    border-radius: 10px;
 }
 
 .left {
     align-self: flex-start;
     background-color: burlywood;
+    border-radius: 10px;
 }
+
