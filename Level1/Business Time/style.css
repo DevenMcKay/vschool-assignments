@@ -90,6 +90,10 @@ main > p {
   padding: 0rem;
 }
 
+.main-artists > img.img-joe {
+  margin-bottom: 15%;
+}
+
 .names {
   display: flex;
 }

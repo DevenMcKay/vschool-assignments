@@ -1,9 +1,9 @@
 // Log 0 - 9
-/*
+
 for (i = 0; i < 10; i++){
   console.log(i)
 }
-*/
+
 
 
 // Log 9 - 0

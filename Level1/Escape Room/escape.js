@@ -3,32 +3,38 @@ console.log(" ");
 const nameInput = readline.question("What is your name? ");
 const name = nameInput.toUpperCase()
 
+// First Question  
 if (readline.keyInYN(`Hello ${name}! Do you want to play a game? `)) {
-  console.log(`
-    -------------------------------------------
+    console.log(`
+  -------------------------------------------
     `);
+
   if (true) {
     console.log(`Okay ${name}! You agreed, so we shall proceed!!`);
   }
 } else {
-  console.log(`
-    -------------------------------------------
+    console.log(`
+  -------------------------------------------
     `);
+
   readline.question(`"Okay, Have a nice day ${name}"`);
   process.exit();
 }
 
+// If Yes, Start the game to choose moves
 console.log("  *********** Doors Lock *************");
 console.log("Choose your next move:");
 
 choices = ['  Put your hand in the dark hole', '  Open the steel door', '  Lift the bloody floor tile'],
   index = 0;
 
+// Consequences First Round
 while (index < 4) {
   index = readline.keyInSelect(choices, "What's your move?"); {
     console.log(`
-    -------------------------------------------
+  -------------------------------------------
     `);
+
     if (index === 0) {
       console.log("By putting your hand in the hole, you contracted dysentery and die!");
       console.log(`RIP ${name}!`);
@@ -42,9 +48,10 @@ while (index < 4) {
       console.log("More blood oozes from the tile, but you find a key!");
     } else if (index === -1) {
       if (readline.keyInYN(`Are you too afraid to continue? `)) {
-        console.log(`
-          -------------------------------------------
+          console.log(`
+  -------------------------------------------
           `);
+
         if (true) {
           console.log(`Okay ${name}, See you in your dreams!!`);
           process.exit();
@@ -53,16 +60,18 @@ while (index < 4) {
     }
   }
 }
-// console.log(`You made it out alive ${name}!...(with dysentery)`)
+
 
 choices = ['  Put your hand in the dark hole', '   Open the steel door with key', '  Lift the bloody floor tile again'],
   index = 0;
 
+// Consequences Sec Round (After key is found)
 while (index < 4) {
   index = readline.keyInSelect(choices, "What's your move?"); {
     console.log(` 
-    -------------------------------------------
+  ------------------------------------------
     `);
+
     if (index === 0) {
       console.log("By putting your hand in the hole, you contracted dysentery and die!");
       console.log(`RIP ${name}!`);
@@ -77,9 +86,10 @@ while (index < 4) {
       console.log("Why did you check again?");
     } else if (index === -1) {
       if (readline.keyInYN(`Are you too afraid to continue? `)) {
-        console.log(`
-          -------------------------------------------
+          console.log(`
+  -------------------------------------------
           `);
+          
         if (true) {
           console.log(`Okay ${name}, See you in your dreams!!`);
           process.exit();
@@ -89,6 +99,7 @@ while (index < 4) {
   }
 }
 
+// Victory
 console.log("The key fits the steel door");
 console.log("   *******  Key Turns  *******");
 console.log(`You made it out alive ${name}!...(with dysentery)`)
