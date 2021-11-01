@@ -33,8 +33,8 @@ function forception(people, alphabet) {
     newArray.push(people[i] + ":")
 
     //Inside For Loop (Alpha)
-    for (j= 0; j < alpha[j].length; j++){
-      newArray.push(alpha) 
+    for (j= 0; j < alpha.length; j++){
+      newArray.push(alpha[j]) 
     }
    }
    console.log(newArray)

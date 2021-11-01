@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mario Pest Control</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Mario Pest Control</h1>
+    <img class="characters-logo" src="img/mario-display.png" alt="mario display/">
+    <img src="img/nintendo-white.png" alt="nintendo logo white" class="logo-white" />
+  </header>
+  <section class="mid-section">
+
+    <!-- bob-omb -->
+    <div class="card">
+      <h2>Bob -omb</h2>
+      <img class="characters" src="img/bob-omb.png" alt="bob-omb" />
+      <div class="totalLine">
+        <img class="coin" src="img/coin.png" alt="coin" />
+        <input id="bob-ombNumb" type="number" min=0 placeholder=0>
+        <h2> X 7</h2>
+      </div>
+    </div>
+
+    <!-- cheep-cheep -->
+    <div class="card">
+      <h2>Cheep-Cheep</h2>
+      <img class="characters" src="img/cheep-cheep.png" alt="cheep-cheep" />
+      <div class="totalLine">
+        <img class="coin" src="img/coin.png" alt="coin" />
+        <input id="cheepNum" type="number" min=0 placeholder=0>
+        <h2> X 11</h2>
+      </div>
+    </div>
+    </div>
+
+    <!-- goomba -->
+    <div class="card">
+      <h2>Goomba</h2>
+      <img class="characters" src="img/goomba.png" alt="goomba" />
+      <div class="totalLine">
+        <img class="coin" src="img/coin.png" alt="coin" />
+        <input id="goombaNum" type="number" min=0 placeholder=0>
+        <h2> X 5</h2>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- total section -->
+  <section class="low-section">
+    <div class="card wide-card" id="low">
+      <h2>Total</h2>
+      <div class="wide-characters">
+        <img class="characters" src="img/princess .png" alt="princess" id="peach" />
+        <button id="totalBtn">Click For Total</button>
+        <img class="characters" src="img/total-coins.png" alt="coin stack" id="stack" />
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="address">
+      <p>10 Rockefeller Plaza</p>
+      <p>New York, NY 10020</p>
+      <p>(On 48th Street between 5th and 6th Avenues)</p>
+    </div>
+    <div class="web-contact">
+      <p>(646) 459-0800</p>
+      <p><a href="mailto:mario@plummer.com">Mario@plummer.com</a></p>
+      <p><a target="_blank" href="https://mario.nintendo.com/">mario.nintendo.com</a></p>
+    </div>
+    <div>
+      <img class="small-characters" src="img/mario-side.png" alt="mario run" id="smallMario">
+    </div>
+  </footer>
+  <script src="app.js"></script>
+</body>
+
+</html>

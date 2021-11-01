@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- id for label link to inputs, name for JS ease -->
+
+<body>
+  <h1>Anywhere Air</h1>
+  <div class="container">
+    <form action="" name="form">
+      <!-- First Name -->
+      <label for="firstName">First Name:</label>
+      <input type="text" name="firstName" id="firstName" />
+      <!-- Last Name -->
+      <label for="lastName">Last Name:</label>
+      <input type="text" name="lastName" id="lastName" />
+      <!-- Age -->
+      <label for="age">Age:</label>
+      <input type="number" min="0" plceholder="0" id="age" name="age">
+      <!-- Gender -->
+      <label for="gender">Gender:</label>
+      <div class="gender">
+        <input type="radio" name="gender" value="Male" id="male">
+        <label for="male">Male</label>
+      </div>
+      <div class="gender">
+        <input type="radio" name="gender" value="Female" id="female">
+        <label for="female">Female</label>
+      </div>
+      <!-- Location -->
+      <label for="city" id="location">Location: (Round Trip)</label>
+      <select name="city" id="city" required>
+        <option value="" disabled selected>Select your city</option>
+        <option value="Atlanta">Atlanta</option>
+        <option value="Houston">Houston</option>
+        <option value="Sacromento">Sacromento</option>
+      </select>
+      <!-- Diet -->
+      <label for="diet">Dietary Restrictions</label>
+      <div class="diet">
+        <input type="checkbox" name="diet" value="Vegetarian" id="vegetarian">
+        <label for="vegetarian">Vegetarian</label>
+      </div>
+      <div class="diet">
+        <input type="checkbox" name="diet" value=" Kosher" id="kosher">
+        <label for="kosher">Kosher</label>
+      </div>
+      <div class="diet">
+        <input type="checkbox" name="diet" value=" Lactose" id="lactose">
+        <label for="lactose">Lactose Free</label>
+      </div>
+      <div class="btn">
+      <button for="form">Submit</button>
+    </div>
+  </div>
+  </form>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>

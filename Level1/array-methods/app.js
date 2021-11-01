@@ -29,7 +29,7 @@ let foods = fruit.concat(vegetables)
 // console.log(foods)
 
 // 8.Splice
-foods.splice(4,2)
+foods.splice(4, 2)
 // console.log(foods)
 
 // 9.Reverse
