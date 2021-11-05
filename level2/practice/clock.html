@@ -1,0 +1,46 @@
+<body>
+  <div>
+    <h1 id="time-display"></h1>
+  </div>
+  <script>
+    // Sets the clock every sec and places value in 10s place when below 10
+    var display = document.getElementById('time-display');
+
+    function getTime() {
+      var now = new Date();
+      var hour = now.getHours();
+      var min = now.getMinutes();
+      var sec = now.getSeconds();
+      if (hour < 10) {
+        hour = `0${hour}`;
+      }
+      if (min < 10) {
+        min = `0${min}`;
+      }
+      if (sec < 10) {
+        sec = `0${sec}`;
+      }
+
+      display.textContent = `${hour}:${min}:${sec}`;
+    }
+
+    setInterval(getTime, 1000);
+
+    // Changes color rapidly
+    var myVar = setInterval(setColor, 300);
+
+    function setColor() {
+      var x = document.body;
+      x.style.backgroundColor = x.style.backgroundColor === "yellow" ? "pink" : "yellow";
+    }
+
+    function stopColor() {
+      clearInterval(myVar);
+    }
+
+    // stops change after 10 secs after page load 
+    setTimeout(stopColor, 10000)
+
+
+  </script>
+</body>

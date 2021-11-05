@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#counter {
+  margin: 20rem auto;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  font-size: 20rem;
+  color: black;
+}
+
+header h1 {
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0rem;
+  padding: 0rem;
+  font-size: 2.5rem;
+  text-align: center;
+  color: white;
+  background-color: rgb(255, 205, 43);
+}
