@@ -32,35 +32,41 @@ section {
   background-color: red;
   border-radius: 50px;
   border: solid 10px rgba(89, 89, 89, 0.379);
-  transition: background-color 500ms linear, border-radius 1s linear, border 500ms;
+  transition: background-color 500ms linear, border-radius 1s linear, border 500ms 1.5s;
 }
+
 .trans2:hover{
-  /* h-offset v-offset blur spread */
   box-shadow: 10px 10px 20px 5px;
-  transform: scale(1.5);
-
-  transition: box-shadow 2s linear, scale 4s;
+  transform: scale(2);
+  transform: skewY(120deg);
+  transition: box-shadow 2s linear, transform 1s, transform 4s;
 }
+
 .trans3:hover{
-  opacity: 0;
-  transform: skewY(40deg);
-
-  transition: opacity 2s, transform 2s  ;
+  opacity: .3;
+  transform: translate(-250px);
+  -webkit-box-reflect: below;
+  transition: opacity 2s, transform 2s, -webkit-box-reflect 2s ease 2s;
 }
+
 .trans4:hover{
   width: 97%;
   border: 30px dashed rgb(0, 21, 255);
-
-  transition: width 1.7s cubic-bezier(0.89, 0, 0.06, 0.94), border 3s;
+  filter: sepia(100%);
+  transition: width 1.7s cubic-bezier(0.89, 0, 0.06, 0.94), border 3s, filter 4s;
 }
+
 .trans5:hover{
+  filter: blur(20px);
   background-image: linear-gradient(rgb(255, 225, 0), rgb(255, 0, 0));
   transform: rotate(180deg);
   padding: 4rem;
-  transition: background-image, transform 2s, padding 2s cubic-bezier(0.5, 0.0, 0.4, 0.94); 
+  transition: filter 4s, background-image, transform 2s, padding 2s cubic-bezier(0.5, 0.0, 0.4, 0.94); 
 }
-.trans6:hover{
-  background-image: repeating-linear-gradient(rgb(255, 0, 234), yellow 10%, rgb(7, 181, 224) 5%);
 
-  transition:  background-image, ;
+.trans6:hover{
+  zoom: 130%;
+  background-image: repeating-linear-gradient(rgb(255, 0, 234), yellow 10%, rgb(7, 181, 224) 5%);
+  transform: skew(-53deg, 22deg);
+  transition:  zoom 1s ease,  background-image, skew 3s ease-in;
 }

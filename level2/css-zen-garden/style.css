@@ -1,0 +1,515 @@
+ /* latin-ext */
+ @font-face {
+  font-family: 'Julius Sans One';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/juliussansone/v9/1Pt2g8TAX_SGgBGUi0tGOYEga5WOzHsXy6KHHow-.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Julius Sans One';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/juliussansone/v9/1Pt2g8TAX_SGgBGUi0tGOYEga5WOwnsXy6KHHg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/librebaskerville/v9/kmKhZrc3Hgbbcjq75U4uslyuy4kn0qNcWx8QDO-WyrubOA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: italic;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/librebaskerville/v9/kmKhZrc3Hgbbcjq75U4uslyuy4kn0qNcWxEQDO-Wyrs.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/librebaskerville/v9/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNXaxMaC82U-ro.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Libre Baskerville';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/librebaskerville/v9/kmKnZrc3Hgbbcjq75U4uslyuy4kn0qNZaxMaC82U.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+/* give the container display grid */
+ display: grid;
+/* with six rows, 50px high */
+/* AUTO can be used in template-row for content  */
+  grid-template-rows:413px auto auto auto 426px 235px;
+/* default all cells/children on the left be 2/3 the screen width, and all on the left 1/3 */
+ grid-template-columns: 2fr 1fr;
+}
+
+/***** Draws Borders *****/
+/* .container section, .container aside, .section2, .aside3, footer{
+  border: solid black 2px;
+}  */
+
+/* HEADER  */
+header {  
+  display: grid;
+  align-items: center;
+  grid-template-columns: 2fr 1fr;
+  grid-column: 1 / span 2;
+  background-image: url(img/contours.png), url(img/gridlines-opaque.png), url("img/huntington.jpg");
+  background-repeat: repeat, repeat, no-repeat;
+  background-attachment: fixed, fixed, scroll;
+  background-size: auto, auto, cover;
+  background-position-y: 0, 2rem, -8rem;
+}
+header img {
+  margin-left: 15%;
+  margin-right: 3rem;
+  display: inline-block;
+  width: 175px;
+  height: 175px;
+}
+header h1 {
+  /* CSS ZEN GARDEN  */
+  margin: 2rem 0 0 0;
+  display: block;
+  font-size: 4.3rem;
+  font-family: 'Julius Sans One';
+  color: white;
+}
+header h2 {
+  /* The Beauty of CSS Design */
+  margin: 0;
+  display: block;
+  padding-top: 1rem;
+  font-size: 2.1rem;
+  font-family: 'Libre Baskerville';
+  font-style: italic;
+  color: #B7C5C5;
+}
+    
+header .header-text {
+  /* H1 & H2 block  */
+  display: inline-block;
+}
+.header-block {
+  /* H1 & H2 & IMG  */
+  display: flex;
+}
+aside.aside1 {
+  display: flex;
+  justify-content: right;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.071);
+}
+
+div.header-aside-block {
+  display: flex;
+  justify-content: right;
+  margin: auto 0;
+  margin-right: 20px;
+  width: 100%;
+}
+.header-aside-block h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: inline;
+}
+.header-aside-block h3:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.header-aside-block h3:nth-last-of-type(1){
+  padding: 1.9rem;
+
+}
+.header-aside-block h3:nth-last-of-type(2){
+  margin-right: 3px;
+  width: 55%;
+  padding: 1.9rem 5%;
+  text-align: center;
+}
+
+
+/* SECTIONS */
+section {
+  grid-column: 1 / span 1;
+  padding: 0 8% 4.5rem 15%;
+}
+aside {
+  grid-column: 2 / span 1;
+}
+p {
+  margin: 0 0 1rem 0;
+  line-height: 2.7rem;
+  letter-spacing: -.6px;
+  font-size: 1.4rem;
+  font-family: 'Libre Baskerville';
+  color: #4f6a6a;
+}
+h3 {
+  margin-top: 2.5rem;
+  font-size: 2.4rem;
+  font-family: 'Julius Sans One';
+  color: #4f6a6a;
+}
+aside h3, aside p, aside a{
+  margin: 0;
+}
+
+span a {
+  text-decoration: none;
+  color: #52899F;
+}
+span a:visited {
+  color: #52899F;
+}
+span a:hover {
+  text-decoration: underline;
+  color: #52899F;
+}
+
+/* SECTION1  */
+.section1 {
+  padding-top: 85px;
+}
+.section1 span a {
+  font-family: 'Julius Sans One';
+  color: #8D9F86;
+  padding: 1rem 0;
+}
+.section1 span a:hover {
+  color: white;
+  text-decoration: none;
+  background-color: #509bbb;
+}
+.arrow {
+  background-color: #DAE0CD;
+  font-size: 1.6rem;
+  border-radius: 15%;
+}
+/* Allow nested square to change with parent link hover */
+.section1 span a:hover > .arrow {
+  background-color: #5C899D;
+}
+.authors {
+  padding-top: 4rem;
+  background-color: lightcoral;
+  /* Example */
+  background-color: #E7ECE8;
+}
+.authors div {
+  margin-left: 15%;
+  width: 50%;
+  padding: 2.25rem 0rem;
+  background-color: lightcoral;
+  border-bottom: #dcdcdb solid 1px;
+   /* Example  */
+   background-color: #E7ECE8;
+}
+.authors div:last-of-type {
+  border-bottom: #dcdcdb solid 0px;
+}
+.authors h3 {
+  margin: 0;
+  color: #3E5151;
+  font-size: 1.6rem;
+}
+.authors p {
+  margin: 0;
+  color: #BBC2BB;
+  font-style: italic;
+}
+.authors a {
+  margin: 0;
+  color: #4c4f44;
+  font-style: normal;
+  font-size: 1.3rem;
+}
+
+/* SECTION 2 PARTICIPATION  */
+section.section2 {
+  padding-top: 3.2rem;
+  grid-column: 1 / span 1 ;
+  background-image: url(img/contours-opaque.png), url(img/gridlines-opaque.png),url(img/bamboo.png);
+  background-attachment: scroll, scroll, fixed;
+  background-color: #b1d0b8ad;
+}
+aside.aside3 {
+  grid-column: 2 / span 1;
+}
+.links {
+  padding-top: 9.5rem;
+  color: #667476;
+  background-color: lightpink;
+  /* Example Match */
+  background-color: #6bab8879;
+  background-image: url(img/contours-opaque.png), url(img/gridlines-opaque.png),url(img/bamboo.png);
+  background-attachment: scroll, scroll, fixed;
+}
+.links div {
+  margin-left: 15%;
+  width: 50%;
+  padding: 2.25rem 0rem;
+  border-bottom: #93948d5b solid 1px;
+}
+.links div:first-of-type {
+  border-top: #93948d5b solid 1px;
+}
+.links h3 {
+  font-size: 1.6rem;
+}
+
+/* SECTION 3 REQUIREMENTS  */
+.section3 {
+  padding-top: 3.2rem;
+}
+.aside4 {
+  background-color: #E6EBE7;
+}
+
+/* SECTION 4 PARTICIPATION  */
+section.section4 {
+  grid-column: 1 / span 2 ;
+  padding: 0 15%;
+  background-image: url(img/gridlines-opaque.png), url(img/contours-opaque.png),url(img/koi.jpg);
+  background-attachment: fixed, fixed, scroll;
+  background-repeat: repeat,repeat, no-repeat;
+  background-position-y: 45%;
+  background-size: auto,auto, cover;
+}
+.section4 h3 {
+  font-family: 'Libre Baskerville';
+  font-style: italic;
+  color: #93A19E;
+  line-height: 5rem;
+}
+.section4 h3 span a {
+  font-style: normal;
+  color: #C7CECD;
+}
+.section4 {
+  padding: auto 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* FOOTER  */
+footer {
+  /* make these span the width of the page */
+  /* background-color: aquamarine; */
+  grid-column: 1 / span 2 ;
+  background-color: #26494f;
+  padding: auto 0;
+  display: flex;
+}
+
+/* use flexbox to make the icons behave like css zen garden's social icons */
+.icons {
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  width: 75rem;
+}
+.icons > a {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-image: url(img/github-black.png);
+}
+.icons > a:hover {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(img/github-white.png);
+}
+
+/******** Mobile (1220px fixes header) *********/
+@media (max-width: 1220px) {
+  header h1 { 
+  margin-top: 0;
+  font-size: 3.5rem;
+  }
+  header h2 { 
+  margin-top: 0;
+  font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 900px){
+  /* use this media query to help these two cells drop to the bottom when screens are smaller */
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* grid-template-columns: 1fr; */
+    /* grid-template-rows: 214px 92px auto auto auto 235px 162px 430px 255px; */
+  }
+  header img{
+    width: 100px;
+    height: 100px;
+    margin-right: 1.8rem;
+    margin-left: 10%;
+  }
+  header {
+    align-items: center;
+    display: block;
+    width: 100%;
+    height: 14.2rem;
+    padding-top: 3rem;
+    background-size: auto;
+  }
+  header h1 {
+    font-size: 3rem;
+  }
+  header h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+  header .aside1 {
+    padding-top: 2.5rem;
+    display: block;
+    margin: 0 auto;
+    height: 7rem;
+    text-align: right;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  header h3 {
+   width: 100%;
+  }
+.header-aside-block h3:nth-last-of-type(2) {
+  /* padding: auto 0; */
+  font-size: 1.5rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.29);
+  margin: 0;
+}
+.header-aside-block h3:nth-last-of-type(1) {
+  /* padding: auto 0; */
+  width: 5%;
+  background-color: rgba(255, 255, 255, 0.29);
+}  
+.header-aside-block h3:hover {
+    background-color: rgba(255, 255, 255, 0.564);
+  }
+/* SECTIONS */
+section {
+  padding: 0 4rem 4.5rem 5.5rem;
+  width: 80%;
+}
+h3 {
+  margin: 3rem 0 1rem 0;
+  font-size: 1.75rem;
+}
+p {
+  margin: 0 0 1rem 0;
+  line-height: 2rem;
+  letter-spacing: -.6px;
+  font-size: 1.2rem;
+}
+.section1 {
+  padding-top: 50px;
+}
+.section2 {
+  width: 83vw;
+}
+.section2 h3:first-of-type{
+  margin-top: 0;
+}
+.section3 {
+} 
+.section3 h3:first-of-type{
+  margin-top: 0;
+}
+.aside4 {
+  display: none;
+  }
+section.section4 {
+  padding: 0;
+  width: 100%;
+  }
+.section4 {
+  height: 18rem;
+  padding: 0;
+}
+.section4 h3{
+  padding: 0 4rem;
+  line-height: 3.5rem;
+  font-size: 1.9rem;
+}
+footer {
+  width: 100%;
+  height: 10rem;
+}
+.aside2 {
+  padding-top: 0;
+  order: 3;
+  width: 100%;
+  grid-template-columns: 2fr;
+  grid-template-rows: 50px;
+}
+.authors div{
+  margin: 0;
+  padding: 1.8rem 4rem;
+  width: 30%;
+  display: inline-block;
+}
+.authors h3 {
+  font-size: 1.5rem;
+}
+.authors a {
+  font-size: 1.1rem;
+}
+.links {
+  padding: 0;
+}
+.links div {
+  margin: 0;
+  width: 100%;
+  padding: 2.25rem 0rem;
+  border-bottom: #93948d5b solid 1px;
+}
+.links h3 {
+  padding: 0 0 0 4rem;
+}
+.links div:first-of-type {
+  border-top: #93948d5b solid 0px;
+}
+aside.aside3 {
+  order: 4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+.icons {
+  width: 75rem;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  width: 75rem;
+  /* height: 70px; */
+}
+.icons > a {
+  width: 110px;
+  height: 120px;
+}
+}
