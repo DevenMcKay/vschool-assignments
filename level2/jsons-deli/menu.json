@@ -1,7 +1,102 @@
 {
-  
-
-
-
-
+  "appetizers": [
+    {
+      "Name": "Mac & Cheese",
+      "Ingredients": [
+        "Cheddar",
+        "Parmesan",
+        "Monterey Jack"
+      ],
+      "Description": "Melted Cheeses topped with Focaccia breadcrumbs."
+    },
+    {
+      "Name": "Grilled Chicken Salad",
+      "Ingredients": [
+        "Salami",
+        "chicken breast",
+        "dressing"
+      ],
+      "Description": "Chopped Salad"
+    }
+  ],
+  "cold sandwiches": [
+    {
+      "Name": "The Italian",
+      "Ingredients": [
+        "Genoa salami",
+        "pepperoni",
+        "Italian dressing"
+      ],
+      "Description": "Our Italian sub is loaded"
+    },
+    {
+      "Name": "Sink or Swim",
+      "Ingredients": [
+        "Smoked turkey breast",
+        "Virginia honey ham",
+        "melted Monterey Jack"
+      ],
+      "Description": "Loaded complete with mayo, deli mustard, lettuce, tomato, onion, and a kosher dill pickle on the side."
+    }
+  ],
+  "Hot sandwiches": [
+    {
+      "Name": "BBQ Cuban Sub",
+      "Ingredients": [
+        "pulled pork",
+        "Virginia honey ham",
+        "Swiss cheese"
+      ],
+      "Description": "Cuban roots. Southern twist. Slow-smoked."
+    },
+    {
+      "Name": "El Brisket",
+      "Ingredients": [
+        "Sweet Baby Ray’s",
+        "melted cheddar",
+        "mayo"
+      ],
+      "Description": "USDA Choice beef brisket smoked for up to 89 hours"
+    }
+  ],
+  "Desserts": [
+    {
+      "Name": "Cookies",
+      "Ingredients": [
+        "chocolate chip",
+        "oatmeal",
+        "Sugar"
+      ],
+      "Description": "Grannies, Fresh out the oven!"
+    },
+    {
+      "Name": "Dirt Brownies",
+      "Ingredients": [
+        "Funfetti",
+        "chocolate",
+        "Gummy Worms"
+      ],
+      "Description": "Brownies Fresh out the muddd!"
+    }
+  ],
+  "Drinks": [
+    {
+      "Name": "Homemade Lemonade",
+      "Ingredients": [
+        "Sugar",
+        "Water",
+        "Lemons"
+      ],
+      "Description": "Chilled in a ice glass bath"
+    },
+    {
+      "Name": "Hot Tea",
+      "Ingredients": [
+        "Water",
+        "Rainbow Tea Leaves",
+        "Splash O' Sugar"
+      ],
+      "Description": "Steamed in a volcanic kettle"
+    }
+  ]
 }

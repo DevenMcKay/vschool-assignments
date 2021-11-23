@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Axios Todo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <section>
+    <h1>Todo.</h1>
+    <div id="itemBlock">
+      <div>
+        <form name="myForm" action="">
+          <div class="inputRow">
+            <!-- TITLE ROW -->
+            <!-- INPUTS NEED IDS FOR LABELS TO ASSIGN -->
+            <label for="completed" class="completedLabel">Done:</label>
+            <input type="checkbox" class="completed" name="completed" id="completed">
+            <input type="text" name="title" class="title" disabled>
+            <label for="price" class="priceLabel">$</label>
+            <input type="number" name="price" class="price" id="price" min="0" disabled>
+          </div>
+          <div class="inputRow">
+            <!-- DESCRIPTION ROW -->
+            <input type="image" src="" alt="" class="image">
+            <textarea name="description" class="description" disabled></textarea>
+          </div>
+          <div class="inputRow">
+            <label for="imageUrl" class="imageUrlLabel">Image URL :</label>
+            <input type="text" class="imageUrl" id="imageUrl" disabled>
+          </div>
+          <div class="inputRow">
+            <!-- BUTTON ROW  -->
+            <input type="button" value="EDIT" class="edit">
+            <input type="button" value="DELETE" class="delete">
+          </div>
+        </form>
+      </div>
+    </div>
+    <button id="addBtn" for="myForm">Add</button>
+  </section>
+  <!-- Axios CDN -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
