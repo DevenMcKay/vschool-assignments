@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+}
+
+h2 {
+  background-color: lightblue;
+  margin-top: 0;
+  padding: 0;
+}
+
+h3 {
+  margin-bottom: 0;
+  background-color: lightgrey;
+}
+.con {
+  margin: 0;
+  border: 3px solid blue;
+  
+}
+
+h1 {
+  text-align: center
+}
