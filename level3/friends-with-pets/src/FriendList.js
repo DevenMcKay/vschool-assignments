@@ -1,20 +1,22 @@
-const friends = [
+const FriendList = [
   {
+    img: "https://picsum.photos/100/100?random=1",
     name: "Ben",
     age: 29,
     pets: [
       {
-        name: "spot",
-        breed: "tabby"
+        name: "Spot",
+        breed: "Tabby"
       }, {
         name: "John Johnson",
-        breed: "husky"
+        breed: "Husky"
       }, {
         name: "Bear the bear",
         breed: "Grizzly"
       }
     ]
   }, {
+    img: "https://picsum.photos/100/100?random=2",
     name: "Bob",
     age: 31,
     pets: [
@@ -24,6 +26,7 @@ const friends = [
       }
     ]
   }, {
+    img: "https://picsum.photos/100/100?random=3",
     name: "Marcus",
     age: 25,
     pets: [
@@ -32,25 +35,26 @@ const friends = [
         breed: "Akita"
       }, {
         name: "Anna",
-        breed: "persian cat"
+        breed: "Persian cat"
       }
     ]
   }, {
+    img: "https://picsum.photos/100/100?random=4",
     name: "Jacob",
     age: 20,
     pets: [
       {
-        name: "fluffy",
-        breed: "sphynx cat"
+        name: "Fluffy",
+        breed: "Sphynx cat"
       }, {
-        name: "patches",
-        breed: "sphynx cat"
+        name: "Patches",
+        breed: "Sphynx cat"
       }, {
-        name: "tiger",
-        breed: "sphynx cat"
+        name: "Tiger",
+        breed: "Sphynx cat"
       }, {
-        name: "oscar",
-        breed: "sphynx cat"
+        name: "Oscar",
+        breed: "Sphynx cat"
       }
     ]
   }

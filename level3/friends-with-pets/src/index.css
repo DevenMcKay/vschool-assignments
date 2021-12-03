@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courgette', cursive;
+  background: #348CBE;
+  background: -webkit-linear-gradient(top left, #348CBE, #F2F2F2);
+  background: -moz-linear-gradient(top left, #348CBE, #F2F2F2);
+  background: linear-gradient(to bottom right, #348CBE, #F2F2F2);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+ 
+  margin: 0 auto;
+  flex-direction: column;
+  flex-basis: 50%;
+  
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+img {
+  border: rgba(0, 0, 0, 0.194) 5px solid;
+}
+h1 {
+  line-height: 1.8rem;
+  text-decoration: underline rgba(0, 0, 0, 0.194) 2px;
+  /* text-decoration-thickness: 0.1em; */
+}
+.container{
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  margin: 1rem auto;
+  border: 3px solid black;
+  background-color: rgba(145, 166, 228, 0.194);
+  padding: 1rem;
+  justify-content: space-evenly;
+
+  height: 170px;
+  overflow:unset;
+}
+.cardLeft {
+  width: 20%;
+  align-self: center;
+}
+.cardRight{
+  text-align: left;
+  width: 50%;
+  flex-wrap: wrap;
+  height: 100px;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-evenly;
+}
+.petsTitle {
+  width: 100%;
+  text-decoration: underline rgba(0, 0, 0, 0.194) 1.5px;
+  text-align: center;
+}
+.pets{
+  width: 40%;
+  flex-basis: 46%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.153);
+  padding-top: .6rem;
+  margin: .3rem;
+  
+}
+.pets h5{
+  /* border-bottom: solid rgba(0, 0, 0, 0.132) 1px ; */
+  /* width: 60%; */
+}
+
+h5{
+  margin-bottom: 10px;
+}
+.age {
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
