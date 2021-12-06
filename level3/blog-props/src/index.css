@@ -1,81 +1,105 @@
 body {
   margin: 0;
   padding: 0;
-  /* background:url(home-bg.jpeg); */
-  background-color: white;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-y: -1rem;
+  /* background-attachment: fixed; */
   letter-spacing: -1.5px;
-  
   font-family: 'Open Sans', sans-serif;
+}
+.backgroundImg {
+  background:url(./home-bg.jpeg);
+  background-repeat: no-repeat;
+  background-position-y: -4rem;
+  box-shadow: inset 0 0 0 1000px rgba(0, 10, 20, 0.413);
+  background-size: cover;
+  /* width: 100vw; */
+  height: 33rem;
 }
 
 nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgb(255, 38, 0);
-  padding: 0 8rem;
+  padding: .5rem 4rem;
   height: 4rem;
+
 }
 .navLabel {
   /* START BOOTSTRAP */
   display: flex;
-  flex-basis: 70%;
+  flex-basis: 60%;
   align-items: center;
-  font-weight: bold;
+}
+h1 a {
   font-weight: 800;
   color: white;
+  font-size: 1.3rem;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+
+nav a:hover{
+  text-decoration: none;
+  color: rgb(222, 222, 222);
+  text-decoration: none;
 }
 
 nav div {
   /* NAV LINKS CONTAINER*/
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 45%;
-  max-width: 20rem;
+  justify-content: space-evenly;
+  width: 50%;
+  max-width: 24rem;
   min-width: 14rem;
 }
 
 nav div a {
   /* EACH NAV LINK  */
-  font-weight: 700;
+  font-weight: 800;
+  font-size: .8rem;
   text-decoration: none;
   color: white;
-
+  letter-spacing: 0;
 }
+
 .headerLabel  {
   /* "CLEAN BLOG"  */
   font-size: 5rem;
   text-align: center;
-  margin: 10rem 0 0 0;
+  margin: 7.1rem 0 0 0;
   font-weight: 800;
+  letter-spacing: normal;
+  color: white;
 }
 
 .headerSub {
   margin: 0;
   text-align: center;
   margin-bottom: 9rem;
-  font-weight: 500;
+  font-weight: 300;
+  letter-spacing: normal;
+  color: white;
 }
+
 main {
-  width: 55%;
-  margin: 0 auto;
+  width: 40%;
+  min-width: 40rem;
+  margin: 3rem auto;
+  padding-left: 4rem;
 }
 
 section {
   padding: 2rem 0;
   border-bottom: solid rgba(104, 104, 104, 0.208) .3px;
 }
+
 .titleLink{
   /* FOR EACH POST  */
   font-weight: 800;
   font-size: 2.2rem;
   letter-spacing: 0px;
   line-height: 2.6rem;
-  margin: 0;
+  margin: .7rem 0;
 }
 
 .subLink{
@@ -83,7 +107,6 @@ section {
   font-weight: 300;
   font-size: 1.6rem;
   letter-spacing: 0px;
-  margin: 1.2rem 0;
   line-height: 1.9rem;
 }
 
@@ -111,6 +134,7 @@ section a:hover {
   display: flex;
   justify-content: flex-end;
 }
+
 .olderPosts {
   background-color: #36728c;
   display: flex;

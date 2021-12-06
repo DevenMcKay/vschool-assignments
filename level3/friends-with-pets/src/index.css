@@ -6,6 +6,7 @@ body {
   background: -webkit-linear-gradient(top left, #348CBE, #F2F2F2);
   background: -moz-linear-gradient(top left, #348CBE, #F2F2F2);
   background: linear-gradient(to bottom right, #348CBE, #F2F2F2);
+  height: 100vh;
 }
 
 main {
@@ -23,14 +24,16 @@ main {
 h1, h2, h3, h4, h5 {
   margin: 0;
 }
+
 img {
   border: rgba(0, 0, 0, 0.194) 5px solid;
 }
+
 h1 {
   line-height: 1.8rem;
   text-decoration: underline rgba(0, 0, 0, 0.194) 2px;
-  /* text-decoration-thickness: 0.1em; */
 }
+
 .container{
   width: 600px;
   display: flex;
@@ -57,11 +60,13 @@ h1 {
   /* flex-direction: row; */
   justify-content: space-evenly;
 }
+
 .petsTitle {
   width: 100%;
   text-decoration: underline rgba(0, 0, 0, 0.194) 1.5px;
   text-align: center;
 }
+
 .pets{
   width: 40%;
   flex-basis: 46%;
@@ -79,6 +84,7 @@ h1 {
 h5{
   margin-bottom: 10px;
 }
+
 .age {
   font-size: 1rem;
   margin-bottom: .5rem;

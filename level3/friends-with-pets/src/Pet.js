@@ -1,6 +1,7 @@
 import React from "react";
 
-function Pet(props){
+function Pet(props) {
+  // console.log(props)
 
   return (
     <div className="pets">
