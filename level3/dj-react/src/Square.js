@@ -1,7 +1,7 @@
 import React from "react";
 
 function Square(props) {
-  console.log(props) 
+  // console.log(props) 
   return (
     <section>
       <div className="square" style={{backgroundColor: props.color}}></div>

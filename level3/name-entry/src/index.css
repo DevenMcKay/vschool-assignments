@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+}
+
+form {
+  text-align: center;
+  margin: 5rem auto;
+}
+input[type="text"] {
+  margin-bottom: 1rem;
+}
+h1 {
+  font-size: 1rem;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+li {
+  width: 10rem;
+  text-align: center;
+  margin: 0 auto;
+  text-align: left;
+}

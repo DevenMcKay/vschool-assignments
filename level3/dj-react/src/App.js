@@ -1,6 +1,8 @@
 import React from "react"
 import Square from "./Square"
 import "./App.css"
+import Sweep from "./sweep.m4a"
+import Honk from "./honk.mp3"
 // import Buttons from "./Buttons"
 
 class App extends React.Component {
@@ -11,13 +13,22 @@ class App extends React.Component {
     }
     this.smallDJ = this.smallDJ.bind(this)
     this.partyDJ = this.partyDJ.bind(this)
+    this.leftDJ = this.leftDJ.bind(this)
+    this.rightDJ = this.rightDJ.bind(this)
+    this.bigDJ1 = this.bigDJ1.bind(this)
+    this.bigDJ2 = this.bigDJ2.bind(this)
+    this.bigDJ3 = this.bigDJ3.bind(this)
+    this.bigDJ4 = this.bigDJ4.bind(this)
+    this.noise = this.noise.bind(this)
+    this.honk = this.honk.bind(this)
   }
-    
-  smallDJ() { 
+  // BUTTON FUNCTIONS
+  smallDJ() {
+    this.honk()
     if (this.state.colors[1] !== "white")
-    this.setState({
-      colors: ["white", "white", "white", "white"]
-    })
+      this.setState({
+        colors: ["white", "white", "white", "white"]
+      })
     else {
       this.setState({
         colors: ["black", "black", "black", "black"]
@@ -26,33 +37,100 @@ class App extends React.Component {
     // console.log(this.state.colors[1])
   }
   partyDJ() {
+    this.honk()
     this.setState(prevState => {
-     return { 
-       colors: ["purple", "purple", prevState, prevState]
+      return {
+        colors: ["purple", "purple", prevState, prevState]
+      }
+    })
+  }
+  leftDJ() {
+    this.honk()
+    this.setState(prevState => {
+      return {
+        colors: [prevState, prevState, "blue", prevState]
+      }
+    })
+  }
+  rightDJ() {
+    this.honk()
+    this.setState(prevState => {
+      return {
+        colors: [prevState, prevState, prevState, "blue"]
+      }
+    })
+  }
+  bigDJ1() {
+    this.honk()
+    this.setState(prevState => {
+      return {
+        colors: ["green", prevState, prevState, prevState]
+      }
+    })
+  }
+  bigDJ2() {
+    this.honk()
+    this.setState(prevState => {
+      return {
+        colors: [prevState, "yellow", prevState, prevState]
+      }
+    })
+  }
+  bigDJ3() {
+    this.honk()
+    this.setState(prevState => {
+      return {
+        colors: [prevState, prevState, "pink", prevState]
+      }
+    })
+  }
+  bigDJ4() {
+    this.honk()
+    this.setState(prevState => {
+      return {
+        colors: [prevState, prevState, prevState, "orange"]
       }
     })
   }
 
-  render() {
-    const squares = this.state.colors.map((item, index) => <Square key={index} color={item}/>)
-    // const buttons = this.state.colors.map((item, index) => <Buttons id={index} item={item}/>)
-    return (
-    <div className="container">
-      {squares}
-      <div className="buttonContainer">
-        <button onClick={this.smallDJ}>Small DJ</button>
-        <button onClick={this.partyDJ}>Party DJ</button>
-        <button >Left DJ</button>
-        <button >Right DJ</button>
-        <button >Big DJ 1</button>
-        <button >Big DJ 2</button>
-        <button >Big DJ 3</button>
-        <button >Big DJ 4</button>
-        <button >Make Some Noise</button>
-      </div>
-      {/* {buttons} */}
-    </div>
-    )}
+  isNoise = false
+
+  noise() {
+    new Audio(Sweep).play()
+    if (this.isNoise === true) {
+      this.isNoise = false
+    } else if (this.isNoise === false) {
+      this.isNoise = true
+    }
+  }
+  honk() {
+    if (this.isNoise === true) {
+      new Audio(Honk).play()
+    }
   }
 
-  export default App
+  render() {
+    const squares = this.state.colors.map((item, index) => <Square key={index} color={item} />)
+    return (
+      <div>
+        <h1>DJ React</h1>
+        <div className="container">
+          {squares}
+          <div className="buttonContainer">
+            <button onClick={this.smallDJ}>Small DJ</button>
+            <button onClick={this.partyDJ}>Party DJ</button>
+            <button onClick={this.leftDJ}>Left DJ</button>
+            <button onClick={this.rightDJ}>Right DJ</button>
+            <button onClick={this.bigDJ1}>Big DJ 1</button>
+            <button onClick={this.bigDJ2}>Big DJ 2</button>
+            <button onClick={this.bigDJ3}>Big DJ 3</button>
+            <button onClick={this.bigDJ4}>Big DJ 4</button>
+            <button onClick={this.noise}>Noise Toggle</button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default App

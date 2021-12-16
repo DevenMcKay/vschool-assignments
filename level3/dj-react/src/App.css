@@ -3,6 +3,10 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
 }
+h1 {
+  margin: 1.5rem auto;
+  text-align: center;
+}
 
 .square {
   width: 100%;
