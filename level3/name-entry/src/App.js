@@ -5,22 +5,22 @@ class App extends React.Component {
     name: "",
     team: ["Steve", "John", "Jill"]
   }
-
+  // MAPS THE ARRAY OF ALL NAMES 
   listTeam = () => {
-  return (this.state.team.map((member, index) => <li key={"Member " + index}>{member}</li>))
-    }
+    return (this.state.team.map((member, index) => <li key={"Member " + index}>{member}</li>))
+  }
 
   handleChange = (event) => {
     this.setState({ name: event.target.value })
-    }
+  }
 
   handleSubmit = (event) => {
     event.preventDefault()
     this.addMember()
-    // RESETS NAME INPUT
-    this.setState({ name: ""})
+    // RESETS NAME INPUT AFTER SUBMIT
+    this.setState({ name: "" })
   }
-  
+
   addMember = () => {
     this.setState(prevState => ({
       team: [...prevState.team, this.state.name]

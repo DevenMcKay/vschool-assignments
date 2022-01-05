@@ -11,19 +11,11 @@ class App extends React.Component {
     this.state = {
       colors: ["white", "white", "white", "white"]
     }
-    this.smallDJ = this.smallDJ.bind(this)
-    this.partyDJ = this.partyDJ.bind(this)
-    this.leftDJ = this.leftDJ.bind(this)
-    this.rightDJ = this.rightDJ.bind(this)
-    this.bigDJ1 = this.bigDJ1.bind(this)
-    this.bigDJ2 = this.bigDJ2.bind(this)
-    this.bigDJ3 = this.bigDJ3.bind(this)
-    this.bigDJ4 = this.bigDJ4.bind(this)
-    this.noise = this.noise.bind(this)
-    this.honk = this.honk.bind(this)
+    // EXAMPLE OF BINDING
+    // this.smallDJ = this.smallDJ.bind(this)
   }
   // BUTTON FUNCTIONS
-  smallDJ() {
+  smallDJ = () => {
     this.honk()
     if (this.state.colors[1] !== "white")
       this.setState({
@@ -36,7 +28,7 @@ class App extends React.Component {
     }
     // console.log(this.state.colors[1])
   }
-  partyDJ() {
+  partyDJ = () => {
     this.honk()
     this.setState(prevState => {
       return {
@@ -44,7 +36,7 @@ class App extends React.Component {
       }
     })
   }
-  leftDJ() {
+  leftDJ = () => {
     this.honk()
     this.setState(prevState => {
       return {
@@ -52,7 +44,7 @@ class App extends React.Component {
       }
     })
   }
-  rightDJ() {
+  rightDJ = () => {
     this.honk()
     this.setState(prevState => {
       return {
@@ -60,7 +52,7 @@ class App extends React.Component {
       }
     })
   }
-  bigDJ1() {
+  bigDJ1 = () => {
     this.honk()
     this.setState(prevState => {
       return {
@@ -68,7 +60,7 @@ class App extends React.Component {
       }
     })
   }
-  bigDJ2() {
+  bigDJ2 = () => {
     this.honk()
     this.setState(prevState => {
       return {
@@ -76,7 +68,7 @@ class App extends React.Component {
       }
     })
   }
-  bigDJ3() {
+  bigDJ3 = () => {
     this.honk()
     this.setState(prevState => {
       return {
@@ -84,7 +76,7 @@ class App extends React.Component {
       }
     })
   }
-  bigDJ4() {
+  bigDJ4 = () => {
     this.honk()
     this.setState(prevState => {
       return {
@@ -95,7 +87,7 @@ class App extends React.Component {
 
   isNoise = false
 
-  noise() {
+  noise = () => {
     new Audio(Sweep).play()
     if (this.isNoise === true) {
       this.isNoise = false
@@ -103,13 +95,13 @@ class App extends React.Component {
       this.isNoise = true
     }
   }
-  honk() {
+  honk = () => {
     if (this.isNoise === true) {
       new Audio(Honk).play()
     }
   }
 
-  render() {
+  render = () => {
     const squares = this.state.colors.map((item, index) => <Square key={index} color={item} />)
     return (
       <div>
