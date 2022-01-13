@@ -1,75 +1,46 @@
-import React from "react";
-import SavedMemes from './SavedMemes';
+import React from 'react';
+import axios from "axios"
+import './App.css';
+import MemeBuilder from "./MemeBuilder"
+import uniqid from 'uniqid'
 
 class MemeImage extends React.Component {
+  // SELECTS AND CHANGES IMAGE
   state = {
-    newMeme: [],
-    savedMeme: []
+    memeImage: [],
+    randomMeme: Math.floor(Math.random() * 99) + 1
   }
 
-  handleSave = (event) => {
-    event.preventDefault()
-    console.log("Save")
-    this.setState(prevState => ({
-      savedMeme: [{...prevState.newMeme }]
-    }))
+  componentDidMount = () => {
+    axios.get("https://api.imgflip.com/get_memes")
+      .then((result) =>
+        this.setState({
+          memeImage: result.data.data.memes
+        })
+      )
   }
 
-  handleChange = (event) => {
+  handleRefresh = (event) => {
     event.preventDefault()
-    const { name, value } = event.target
-    this.setState(prevState => ({
-      newMeme: { ...prevState.newMeme, [name]: value, memeID: this.props.item.id, url: this.props.item.url, name: this.props.item.name }
-    }))
-  }
-  clearInputs = () => {
     this.setState({
-      newMeme: {
-        bottomText: "",
-        topText: "",
-        memeID: ""
-      }
+      randomMeme: Math.floor(Math.random() * this.state.memeImage.length) + 1,
     })
   }
-
   render() {
-    const { url, name } = this.props.item
-    console.log(this.state.newMeme)
-    const SavedMeme = this.state.savedMeme.map((item, id) => <SavedMemes
-      key={id}
-      id={id}
-      item={item} />)
 
     return (
       <div>
-        <form >
-          <textarea
-            placeholder="Place Text Here"
-            className="topText"
-            name="topText"
-            onChange={this.handleChange}
-            value={this.state.topText} />
-          <img
-            src={url}
-            alt={name}
-          />
-          <textarea
-            placeholder="Place Text Here"
-            className="bottomText"
-            name="bottomText"
-            onChange={this.handleChange}
-            value={this.state.bottomText} />
-          <button
-            className="refreshBtn"
-            onClick={this.props.refresh}>Refresh Image</button>
-          <button
-            className="saveBtn"
-            onClick={this.handleSave}>Save Meme</button>
-        </form>
-        {SavedMeme}
+        {this.state.memeImage.slice(this.state.randomMeme - 1, this.state.randomMeme).map((item, id) =>
+          <MemeBuilder
+            key={id}
+            // UNIQUE ID NPM ALLOWS DUPLICATE MEMES TO EXIST 
+            id={uniqid()}
+            url={item.url}
+            name={item.name}
+            refresh={this.handleRefresh} />)}
       </div>
     )
   }
 }
 
-export default MemeImage
+export default MemeImage;
