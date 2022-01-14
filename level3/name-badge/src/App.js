@@ -1,17 +1,16 @@
 import React from "react"
 import './App.css'
 import Badges from "./Badges"
-import BadgeData from "./BadgeData"
 
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      BadgeData,
       newBadge: []
     }
   }
 
+  // TAKES USER INFO & MAKES NEW_BADGE ARRAY IN STATE
   handleSubmit = (event) => {
     event.preventDefault();
     const info = {

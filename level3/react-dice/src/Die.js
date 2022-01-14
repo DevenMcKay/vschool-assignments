@@ -1,15 +1,20 @@
 import React from "react";
 
-function Die(props) {
-  // keep() {
-  //   return{ {props.num=props.num }}
-  // }
-  console.log(props.num)
-  return (
-    <div>
-      <button className="die" onClick={props.onClick}>{props.nums}</button>
-    </div>
-  )
+class Die extends React.Component {
+
+  onClick = (event) => {
+    event.preventDefault()
+    this.props.onClick(this.props.num.id)
+  }
+
+  render() {
+    return (
+      <div>
+        <button className="die" onClick={this.onClick}>{this.props.num.num}</button>
+      </div>
+    )
+  }
+
 }
 
 export default Die

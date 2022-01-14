@@ -30,7 +30,7 @@ class MemeBuilder extends React.Component {
     })
   }
 
-  // UPDATES MEME BEING BUILT
+  // 1. CREATES & UPDATES MEME BEING BUILT
   handleBuildChange = (event) => {
     event.preventDefault()
     const { name, value } = event.target
@@ -82,7 +82,7 @@ class MemeBuilder extends React.Component {
       }
       return item
     })
-    this.setState(prevState => ({ savedMeme: updatedMemes }))
+    this.setState(() => ({ savedMeme: updatedMemes }))
   }
 
   handleTextEditBottom = (id, updatedBottomText) => {
@@ -92,7 +92,7 @@ class MemeBuilder extends React.Component {
       }
       return item
     })
-    this.setState(prevState => ({ savedMeme: updatedMemes }))
+    this.setState(() => ({ savedMeme: updatedMemes }))
   }
 
   // GENERATES UNIQUE KEY FOR SAVED MEMES
