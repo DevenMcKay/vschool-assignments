@@ -1,0 +1,55 @@
+body {
+  box-sizing: border-box;
+}
+.formContainer {
+  margin: 0 auto;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+.form {
+  padding: 2rem 3rem 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+}
+.input {
+  display: inline-flex;
+  margin: 0;
+  width: 47%;
+}
+textarea {
+  width: 100%;
+  height: 5rem;
+  padding: 3px; 
+}
+button {
+  /* text-align: center; */
+  margin: 0 auto;
+}
+.badge {
+  padding: 0 3rem 1rem;
+}
+.badgeContainer {
+  margin: .5rem auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 0;
+}
+
+.badgeContainer h2 {
+  color: white;
+  border-radius: 4px;
+  background-color: grey;
+  margin: 0 0 1rem 0;
+  padding-left: 3rem;
+}
+
+.moreInfo {
+  width: 100%;
+  min-height: 4rem;
+  border: 1px solid black;
+  padding: 4px;
+}

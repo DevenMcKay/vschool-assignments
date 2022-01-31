@@ -1,0 +1,90 @@
+body {
+  background-color: red;
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.desktop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  padding: 2% 10%;
+}
+.mobile {
+  text-align: center;
+}
+
+
+.red-theme {
+  background-color: rgb(105, 0, 0);
+  color: white;
+}
+
+.white-theme {
+  background-color: white;
+  color: black;
+}
+
+.blue-theme {
+  background-color: rgb(7, 7, 124);
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+
+li > a {
+  text-decoration: none;
+  color:white;
+}
+
+main {
+  height: 100%;
+  /* PREVENTS CONTENT FOLD OR OVERLAP */
+  min-height: 15%;
+  padding: 35vh 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+button {
+  padding: 1rem;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  width: 30%;
+  margin: 0 1rem;
+}
+
+select{
+  margin: 2rem 0;
+  width: 20rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.main-red-theme {
+  background-color: rgb(167, 1, 1);
+  color: rgb(221, 166, 166);
+}
+.main-white-theme {
+  background-color: rgb(221, 221, 221);
+  color: black;
+}
+.main-blue-theme {
+  background-color: rgb(48, 61, 231);
+  color: rgb(166, 195, 221);
+}
+
+footer {
+  text-align: center;
+}
