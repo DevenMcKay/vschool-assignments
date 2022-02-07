@@ -1,15 +1,23 @@
+.titleText { 
+  text-align: center;
+  text-transform: uppercase;
+  margin: .5rem 0;
+  padding: 1rem;
+  background-color: red;
+}
 .userInput {
   text-align: center;
-  background-color: red;
+  background-color: rgb(255, 38, 38);
   padding: 2rem 0;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+  padding: 1rem;
 }
 
 .userInput > input {
-  /* width: 20%; */
+  margin: 0;
  }
 
 .submitBtnContainer {
@@ -23,11 +31,21 @@
   flex-wrap: wrap;
 }
 
-.item {
-  margin-top: 1rem;
+.listItem {
+  padding: 1rem;
+  margin-top: .5rem;
   width: 30%;
-  background-color: red;
+  background-color: rgb(245, 84, 84);
   text-align: center;
+  /* PREVENTS ITEMS FROM GROWING TO MATCH OTHER FLEX ITTEMS */
+  height: 0%
+}
+
+.listItem > img {
+  width: 85%;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  margin-top: .5rem;
 }
 
 .textTitle {
@@ -49,17 +67,26 @@
   margin-top: 1rem;
 }
 
-
-.item > img {
-  width: 85%;
-  object-fit: contain;
-  margin-bottom: 1rem;
+.itemButtonContainer {
+  margin: 1rem 0 ;
 }
 
-.buttonContainer {
-  margin-bottom: 1rem;
-}
-
-.buttonContainer > button:nth-of-type(2) {
+.itemButtonContainer > button:nth-of-type(2) {
   margin: 1rem .5rem 0;
+}
+
+input:disabled {
+  border: none;
+  color: white;
+  background-color: rgb(245, 84, 84);
+}
+
+textarea:disabled {
+  border: solid white 1px;
+  padding: 3px;
+  color: white;
+  background-color: rgb(255, 116, 116);
+}
+textarea::placeholder {
+ color: rgb(145, 145, 145); 
 }

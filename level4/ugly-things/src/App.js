@@ -8,7 +8,7 @@ import { ListContextProvider } from "./components/listContext"
 function App() {
   return (
     <>
-      {/* <LISTCONTEXT> WIDE WRAP ALLOWS CONTEXT IN FORMCONTEXT, FORM, & UGLYARRAY */}
+      {/* <LISTCONTEXT> WIDE COMP WRAP ALLOWS useCONTEXT IN FORMCONTEXT, FORM, & UGLYARRAY */}
       <ListContextProvider>
         <FormContextProvider>
           <Form />
