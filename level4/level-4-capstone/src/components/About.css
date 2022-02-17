@@ -1,0 +1,76 @@
+.bioArtistName {
+  color: white;
+  padding: 2rem 0 0rem 0;
+  background-color: rgba(0, 0, 0, 0.571);
+  margin: 0;
+  /* line-height: .9; */
+}
+.bioImage {
+  margin:1.5rem;
+  width: 55vw;
+  border: rgba(255, 255, 255, 0.509) 2px solid;
+}
+.bio {
+  padding: 2rem 7rem;
+  text-align: justify;
+  text-justify: newspaper;
+  text-indent: 1.5rem;
+  color: rgb(218, 218, 218);
+  font-weight: 200;
+  font-size: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.571);
+  margin: 0;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+
+a:hover {
+  background-color: rgba(14, 123, 219, 0);
+  text-decoration: underline;
+}
+
+.about {
+  text-align: center;
+}
+
+.linkContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, 0.701);
+}
+
+.linkContainer > p {
+  margin: 2rem 0;
+}
+
+/* .logo-link {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  align-items: center;
+  text-align: center;
+} */
+p > a > img {
+  margin-bottom: 4px;
+  display: block;
+  padding: .5rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  width: 2rem;
+}
+
+
+@media (max-width: 800px ) {
+  .bioImage {
+    width: 50vw;
+  }
+  .bio {
+    padding: 2rem 4rem;
+    font-size: 1.4rem;
+  }
+}
