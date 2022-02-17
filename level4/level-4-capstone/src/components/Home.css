@@ -1,0 +1,33 @@
+p {
+  color:white;
+}
+
+.imageContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.imageContainer > div {
+  object-fit: contain;
+  
+}
+
+
+img {
+  width: 33.3%;
+}
+
+.imageDiv > a:hover {
+  background-color: rgb(255, 255, 255);
+  
+}
+
+@media (max-width: 800px ) {
+  img {
+    width: 50vw;
+  }
+  .imageContainer {
+    text-align: center;
+  }
+}
