@@ -1,16 +1,24 @@
+.about{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 95vh;
+}
 .bioArtistName {
   color: white;
   padding: 2rem 0 0rem 0;
   background-color: rgba(0, 0, 0, 0.571);
   margin: 0;
-  /* line-height: .9; */
+  width: 100vw;
 }
 .bioImage {
+  justify-content: center;
   margin:1.5rem;
   width: 55vw;
   border: rgba(255, 255, 255, 0.509) 2px solid;
 }
 .bio {
+  flex-basis: 50%;
   padding: 2rem 7rem;
   text-align: justify;
   text-justify: newspaper;
@@ -41,29 +49,31 @@ a:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background-color: rgba(0, 0, 0, 0.701);
+  width: 100vw;
 }
 
 .linkContainer > p {
   margin: 2rem 0;
 }
 
-/* .logo-link {
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  align-items: center;
-  text-align: center;
-} */
 p > a > img {
-  margin-bottom: 4px;
   display: block;
-  padding: .5rem;
+  padding: .2rem;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   width: 2rem;
+  margin: 0 auto;
 }
 
+footer {
+
+  justify-content: flex-end;
+}
+
+.bottomP {
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.441);
+}
 
 @media (max-width: 800px ) {
   .bioImage {

@@ -7,7 +7,8 @@ nav{
   color: rgb(255, 255, 255);
   list-style: none;
   align-items: flex-end;
-  height: 3.8rem;
+  /* height: 3.8rem; */
+  height: 5vh;
   overflow: hidden;
   padding: 0 2rem 0rem 2rem;
 }
@@ -42,11 +43,52 @@ nav > a:hover {
   text-decoration: underline;
 }
 
+
+#mySidenav a {
+  position: absolute;
+  transition: 0.3s;
+  padding: 15px;
+  width: 90px;
+  text-decoration: none;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.564);
+}
+
+#mySidenav a:first-of-type:hover {
+  left: 0;
+}
+#mySidenav a:nth-last-of-type(1):hover {
+  right: 0;
+}
+
+#leftArrow {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0 5px 5px 0;
+  left: -80px;
+  top: 75vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#rightArrow {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px 0px 0px 5px;
+  right: -80px;
+  top: 75vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#rightArrow span:first-of-type{
+  font-size: 1.3rem;
+}
+
+
 @media (max-width: 800px ) {
   nav{
     justify-content: flex-start;
     flex-direction: column;
-    height: 6.5rem;
+    height: 8vh;
     align-items: right;
     text-align: right;
     padding: 0;

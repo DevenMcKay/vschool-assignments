@@ -1,15 +1,13 @@
 import React, { useContext, useEffect } from "react";
 import { DataContext } from "./dataContext";
-import "./Home.css"
 import { Link } from "react-router-dom"
+import "./Home.css"
 
 export function Home() {
-  const { albums, setAlbums, images, setParams } = useContext(DataContext)
-
-  const handleClick = () => {
-
-  }
-
+  const { images, setPage } = useContext(DataContext)
+  useEffect(() =>
+    setPage("home")
+  )
   return (
     <div className="imageContainer">
       <div className="imageDiv">
@@ -18,15 +16,11 @@ export function Home() {
             key={index}
             to={`/track${index}`}>
             <img
-              // onClick={ }
-              src={item}
-              alt=""
-              index={index}
-            >
+              src={item.images}
+              alt={item}
+              index={index}>
             </img>
           </Link>
-
-
         ))}
       </div>
     </div>

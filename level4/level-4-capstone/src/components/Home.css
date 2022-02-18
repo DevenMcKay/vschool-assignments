@@ -8,14 +8,10 @@ p {
   flex-direction: row;
 }
 
-.imageContainer > div {
+.imageDiv > a > img {
+  box-sizing: border-box;
+  width: 33.33%;
   object-fit: contain;
-  
-}
-
-
-img {
-  width: 33.3%;
 }
 
 .imageDiv > a:hover {

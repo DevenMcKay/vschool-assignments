@@ -6,9 +6,8 @@ import { DataContextProvider } from './components/dataContext';
 
 
 ReactDOM.render(
- 
-    <DataContextProvider>
-     <App />
-    </DataContextProvider>,
+  <DataContextProvider>
+    <App />
+  </DataContextProvider>,
   document.getElementById('root')
 );
