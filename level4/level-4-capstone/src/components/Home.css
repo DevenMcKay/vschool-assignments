@@ -20,7 +20,7 @@ p {
 }
 
 @media (max-width: 800px ) {
-  img {
+  .imageDiv > a > img {
     width: 50vw;
   }
   .imageContainer {
