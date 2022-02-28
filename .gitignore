@@ -10,3 +10,12 @@ node_modules/
 Assignments.code-workspace
 
 .vscode/settings.json
+
+# Ignore all text files
+*.txt
+
+# Ignore files related to API keys
+.env
+
+# Ignore SASS config files
+.sass-cache
