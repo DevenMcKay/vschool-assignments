@@ -15,9 +15,10 @@ const bounties = [
     "First Name": "Darth",
     "Last Name": "Vader",
     "Living": true,
-    "Bounty Amount": 136,
+    "Bounty Amossunt": 136,
     "Type": "Sith",
-    _id: uuidv4()
+    // STATIC ID FOR TESTING
+    _id: "e6c561a0-5e4b-4d7c-8d05-14ea5d9d053e"
   },
   {
     "First Name": "Obi-Wan",
@@ -38,6 +39,20 @@ bountiesRouter.route("/")
     newBounty._id = uuidv4()
     bounties.push(newBounty)
     res.send(`${newBounty["First Name"]} ${newBounty["Last Name"]} Successfully Added!`)
+  })
+
+bountiesRouter.route("/:bountyId")
+  .put((req, res) => {
+    const bountyId = req.params.bountyId
+    const bountyIndex = bounties.findIndex(bounty => bounty._id === bountyId)
+    const updatedBounty = Object.assign(bounties[bountyIndex], req.body)
+    res.send(updatedBounty)
+  })
+  .delete((req, res) => {
+    const bountyId = req.params.bountyId
+    const bountyIndex = bounties.findIndex(bounty => bounty._id === bountyId)
+    bounties.splice(bountyIndex, 1)
+    res.send("Bounty Removed")
   })
 
 module.exports = bountiesRouter
