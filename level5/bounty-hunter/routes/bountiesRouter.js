@@ -1,57 +1,45 @@
 const express = require("express")
 const bountiesRouter = express.Router()
 const { v4: uuidv4 } = require("uuid")
-
-const bounties = [
-  {
-    "First Name": "Luke",
-    "Last Name": "Skywalker",
-    "Living": true,
-    "Bounty Amount": 77,
-    "Type": "Jedi",
-    _id: uuidv4()
-  },
-  {
-    "First Name": "Darth",
-    "Last Name": "Vader",
-    "Living": true,
-    "Bounty Amossunt": 136,
-    "Type": "Sith",
-    // STATIC ID FOR TESTING
-    _id: "e6c561a0-5e4b-4d7c-8d05-14ea5d9d053e"
-  },
-  {
-    "First Name": "Obi-Wan",
-    "Last Name": "Kenobi",
-    "Living": true,
-    "Bounty Amount": 182,
-    "Type": "Jedi",
-    _id: uuidv4()
-  }
-]
+const bountyData = require("../bountyData")
 
 bountiesRouter.route("/")
   .get((req, res) => {
-    res.send(bounties)
+    res.send(bountyData)
   })
   .post((req, res) => {
     const newBounty = req.body
     newBounty._id = uuidv4()
-    bounties.push(newBounty)
-    res.send(`${newBounty["First Name"]} ${newBounty["Last Name"]} Successfully Added!`)
+    if (newBounty.Img === "" || newBounty.Img === undefined) {
+      newBounty.Img = "https://live.staticflickr.com/5604/15364471327_12e86bf4c3_z.jpg"
+    }
+    if (newBounty.Type === "" || newBounty.Type === undefined) {
+      newBounty.Type = "Jedi"
+    }
+    if (!newBounty.Bounty_Amount) {
+      newBounty.Bounty_Amount = 0
+    }
+    if (!newBounty.First_Name) {
+      newBounty.First_Name = "?"
+    }
+    if (!newBounty.Last_Name) {
+      newBounty.Last_Name = "?"
+    }
+    bountyData.push(newBounty)
+    res.send(newBounty)
   })
 
 bountiesRouter.route("/:bountyId")
   .put((req, res) => {
     const bountyId = req.params.bountyId
-    const bountyIndex = bounties.findIndex(bounty => bounty._id === bountyId)
-    const updatedBounty = Object.assign(bounties[bountyIndex], req.body)
+    const bountyIndex = bountyData.findIndex(bounty => bounty._id === bountyId)
+    const updatedBounty = Object.assign(bountyData[bountyIndex], req.body)
     res.send(updatedBounty)
   })
   .delete((req, res) => {
     const bountyId = req.params.bountyId
-    const bountyIndex = bounties.findIndex(bounty => bounty._id === bountyId)
-    bounties.splice(bountyIndex, 1)
+    const bountyIndex = bountyData.findIndex(bounty => bounty._id === bountyId)
+    bountyData.splice(bountyIndex, 1)
     res.send("Bounty Removed")
   })
 

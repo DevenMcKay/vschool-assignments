@@ -1,0 +1,33 @@
+.newForm {
+  margin: 1rem auto 0rem;
+}
+
+.isDeadCheck {
+  transform: scale(2);
+}
+
+.isDeadCheck label {
+  font-size: 1.4rem;
+}
+
+.cardHeader {
+  text-align: left;
+}
+
+.bountyAmount{
+  font-size: .5rem;
+  width: 3rem;
+}
+
+form input, form select {
+  margin: .4rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+
+form button {
+  padding: .5rem;
+  margin: .4rem auto 0rem auto;
+  width: 7rem;
+  border-radius: 10px;
+}

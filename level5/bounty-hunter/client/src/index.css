@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    color: rgb(230, 230, 230);
+    box-sizing: border-box;
+    background-image: url("./Blood.jpg");
+    background-size: 190%;
+    background-repeat: no-repeat;
+}
