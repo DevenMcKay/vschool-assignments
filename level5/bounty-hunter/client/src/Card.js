@@ -34,6 +34,7 @@ function Card(props) {
   }
 
   return (
+    console.log(Img),
     <>
       {!editToggle ?
         <>
@@ -55,9 +56,17 @@ function Card(props) {
               </div>
               <h1>{Bounty_Amount}</h1>
             </div>
-
-            <img src={Img} alt={First_Name} />
-            <div className={cover()}></div>
+            <div className="ImgContainer">
+              <img
+                src={Img}
+                // FILLS IMAGE IF LINK ERROR
+                onError={({ currentTarget }) => {
+                  currentTarget.onerror = null;
+                  currentTarget.src = "https://live.staticflickr.com/5604/15364471327_12e86bf4c3_z.jpg"
+                }}
+                alt={First_Name} />
+              <div className={cover()}></div>
+            </div>
             <div className="nameContainer">
               <h1>{First_Name}</h1>
               <h1>{Last_Name}</h1>
@@ -99,7 +108,9 @@ function Card(props) {
                 onChange={handleChange}
               ></input>
             </div>
-            <img src={Img} alt={`${First_Name} ${Last_Name}`} />
+            <div className="ImgContainer">
+              <img src={Img} alt={`${First_Name} ${Last_Name}`} />
+            </div>
             <input
               name="Img"
               placeholder="Image Url"

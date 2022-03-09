@@ -47,7 +47,9 @@ function Form(props) {
             onChange={handleChange}
           ></input>
         </div>
-        <img src={Unlockable} alt={`${First_Name} ${Last_Name}`} />
+        <div className="ImgContainer">
+          <img src={Unlockable} alt={`${First_Name} ${Last_Name}`} />
+        </div>
         <input
           name="Img"
           value={newBounty.Img}

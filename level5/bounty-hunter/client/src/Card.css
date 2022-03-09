@@ -30,6 +30,7 @@
   border-radius: 20px;
   border: solid white 2px;
   padding: 1rem;
+  min-width: 11rem;
 }
 
 .theme-blue {
@@ -46,13 +47,20 @@
   margin: 0;
 }
 
-.card > img {
+.ImgContainer > img {
   margin: 1rem auto .5rem;
   width: 10rem;
   height: 10rem;
+  min-width: 10rem;
+  min-height: 10rem;
   object-fit: cover;
   border: solid white 3px;
   border-radius: 20px;
+}
+
+.ImgContainer {
+  overflow: hidden;
+  
 }
 
 .nameContainer h1 {
