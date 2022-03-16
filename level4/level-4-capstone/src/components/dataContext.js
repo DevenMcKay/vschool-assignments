@@ -186,6 +186,7 @@ function DataContextProvider(props) {
   //       .then(result => {
   //         setYoutube(prev => (prev.concat({
   //           ...item,
+  //           item: result.data,
   //           video: result.data.items[0].id.videoId,
   //           image: result.data.items[0].snippet.thumbnails.medium.url,
   //         }).sort(function (a, b) { return a.index - b.index })))
