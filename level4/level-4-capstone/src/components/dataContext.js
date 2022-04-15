@@ -49,7 +49,7 @@ function DataContextProvider(props) {
     setList(initialList)
     lastFmSearch(initialList)
     iTunesSearch(initialList)
-    // youTubeSearch(initialList)
+    youTubeSearch(initialList)
   }, [albums])
 
   // LAST FM ARTIST BIO & ****** ARRAY READY FOR POPUP INFO ****** 
@@ -91,108 +91,108 @@ function DataContextProvider(props) {
   // https://console.developers.google.com/
 
 
-  useEffect(() =>
-    function youTubeSearch(initialList) {
-      setYoutube(
-        [
-          {
-            "index": 0,
-            "artistName": "DDG",
-            "name": "Elon Musk",
-            "id": "alb.646825033",
-            "upc": "886449904150",
-            "video": "Un2gSPpjqFo",
-            "image": "https://i.ytimg.com/vi/Un2gSPpjqFo/mqdefault.jpg"
-          },
-          {
-            "index": 1,
-            "artistName": "Rex Orange County",
-            "name": "AMAZING",
-            "id": "alb.645280629",
-            "upc": "886449809387",
-            "video": "nr2CsEtXxmI",
-            "image": "https://i.ytimg.com/vi/nr2CsEtXxmI/mqdefault.jpg"
-          },
-          {
-            "index": 2,
-            "artistName": "J Balvin",
-            "name": "Niño Soñador",
-            "id": "alb.647162784",
-            "upc": "00602445606856",
-            "video": "iGSaK4ii6BY",
-            "image": "https://i.ytimg.com/vi/iGSaK4ii6BY/mqdefault.jpg"
-          },
-          {
-            "index": 3,
-            "artistName": "Kid Cudi",
-            "name": "Want It Bad",
-            "id": "alb.647551262",
-            "upc": "00602445540464",
-            "video": "SASgYFiwTQw",
-            "image": "https://i.ytimg.com/vi/SASgYFiwTQw/mqdefault.jpg"
-          },
-          {
-            "index": 4,
-            "artistName": "Troye Sivan",
-            "name": "Trouble (feat. Jay Som)",
-            "id": "alb.646769481",
-            "upc": "00602445506606",
-            "video": "7aFGaSdTJGU",
-            "image": "https://i.ytimg.com/vi/7aFGaSdTJGU/mqdefault.jpg"
-          },
-          {
-            "index": 5,
-            "artistName": "Ozuna",
-            "name": "Deprimida",
-            "id": "alb.645145808",
-            "upc": "196626393531",
-            "video": "-AQ2PyxwZ6k",
-            "image": "https://i.ytimg.com/vi/-AQ2PyxwZ6k/mqdefault.jpg"
-          },
-          {
-            "index": 6,
-            "artistName": "Clean Bandit",
-            "name": "Everything But You (feat. A7S)",
-            "id": "alb.646595257",
-            "upc": "190296238475",
-            "video": "DA_wP7hD88U",
-            "image": "https://i.ytimg.com/vi/DA_wP7hD88U/mqdefault.jpg"
-          },
-          {
-            "index": 7,
-            "artistName": "Ed Sheeran",
-            "name": "Bad Habits (feat. Bring Me The Horizon)",
-            "id": "alb.646612229",
-            "upc": "190296216657",
-            "video": "IxcxyGDD38E",
-            "image": "https://i.ytimg.com/vi/IxcxyGDD38E/mqdefault.jpg"
-          },
-          {
-            "index": 8,
-            "artistName": "Jack Harlow",
-            "name": "Nail Tech",
-            "id": "alb.647581932",
-            "upc": "075679758927",
-            "video": "e2AeKIzfQus",
-            "image": "https://i.ytimg.com/vi/e2AeKIzfQus/mqdefault.jpg"
-          }
-        ].sort(function (a, b) { return a.index - b.index }))
-    }, [albums])
-
+  // useEffect(() =>
   //   function youTubeSearch(initialList) {
-  //   initialList.map((item) => {
-  //     axios.get(
-  //       `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${initialList[item.index].artistName}${initialList[item.index].name}&key=${process.env.REACT_APP_YOUTUBE}`)
-  //       .then(result => {
-  //         setYoutube(prev => (prev.concat({
-  //           ...item,
-  //           item: result.data,
-  //           video: result.data.items[0].id.videoId,
-  //           image: result.data.items[0].snippet.thumbnails.medium.url,
-  //         }).sort(function (a, b) { return a.index - b.index })))
-  //       }).catch(err => console.log(err))
-  //   })
-  // }
+  //     setYoutube(
+  //       [
+  //         {
+  //           "index": 0,
+  //           "artistName": "DDG",
+  //           "name": "Elon Musk",
+  //           "id": "alb.646825033",
+  //           "upc": "886449904150",
+  //           "video": "Un2gSPpjqFo",
+  //           "image": "https://i.ytimg.com/vi/Un2gSPpjqFo/mqdefault.jpg"
+  //         },
+  //         {
+  //           "index": 1,
+  //           "artistName": "Rex Orange County",
+  //           "name": "AMAZING",
+  //           "id": "alb.645280629",
+  //           "upc": "886449809387",
+  //           "video": "nr2CsEtXxmI",
+  //           "image": "https://i.ytimg.com/vi/nr2CsEtXxmI/mqdefault.jpg"
+  //         },
+  //         {
+  //           "index": 2,
+  //           "artistName": "J Balvin",
+  //           "name": "Niño Soñador",
+  //           "id": "alb.647162784",
+  //           "upc": "00602445606856",
+  //           "video": "iGSaK4ii6BY",
+  //           "image": "https://i.ytimg.com/vi/iGSaK4ii6BY/mqdefault.jpg"
+  //         },
+  //         {
+  //           "index": 3,
+  //           "artistName": "Kid Cudi",
+  //           "name": "Want It Bad",
+  //           "id": "alb.647551262",
+  //           "upc": "00602445540464",
+  //           "video": "SASgYFiwTQw",
+  //           "image": "https://i.ytimg.com/vi/SASgYFiwTQw/mqdefault.jpg"
+  //         },
+  //         {
+  //           "index": 4,
+  //           "artistName": "Troye Sivan",
+  //           "name": "Trouble (feat. Jay Som)",
+  //           "id": "alb.646769481",
+  //           "upc": "00602445506606",
+  //           "video": "7aFGaSdTJGU",
+  //           "image": "https://i.ytimg.com/vi/7aFGaSdTJGU/mqdefault.jpg"
+  //         },
+  //         {
+  //           "index": 5,
+  //           "artistName": "Ozuna",
+  //           "name": "Deprimida",
+  //           "id": "alb.645145808",
+  //           "upc": "196626393531",
+  //           "video": "-AQ2PyxwZ6k",
+  //           "image": "https://i.ytimg.com/vi/-AQ2PyxwZ6k/mqdefault.jpg"
+  //         },
+  //         {
+  //           "index": 6,
+  //           "artistName": "Clean Bandit",
+  //           "name": "Everything But You (feat. A7S)",
+  //           "id": "alb.646595257",
+  //           "upc": "190296238475",
+  //           "video": "DA_wP7hD88U",
+  //           "image": "https://i.ytimg.com/vi/DA_wP7hD88U/mqdefault.jpg"
+  //         },
+  //         {
+  //           "index": 7,
+  //           "artistName": "Ed Sheeran",
+  //           "name": "Bad Habits (feat. Bring Me The Horizon)",
+  //           "id": "alb.646612229",
+  //           "upc": "190296216657",
+  //           "video": "IxcxyGDD38E",
+  //           "image": "https://i.ytimg.com/vi/IxcxyGDD38E/mqdefault.jpg"
+  //         },
+  //         {
+  //           "index": 8,
+  //           "artistName": "Jack Harlow",
+  //           "name": "Nail Tech",
+  //           "id": "alb.647581932",
+  //           "upc": "075679758927",
+  //           "video": "e2AeKIzfQus",
+  //           "image": "https://i.ytimg.com/vi/e2AeKIzfQus/mqdefault.jpg"
+  //         }
+  //       ].sort(function (a, b) { return a.index - b.index }))
+  //   }, [albums])
+
+    function youTubeSearch(initialList) {
+    initialList.map((item) => {
+      axios.get(
+        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=${initialList[item.index].artistName}${initialList[item.index].name}&key=${process.env.REACT_APP_YOUTUBE}`)
+        .then(result => {
+          setYoutube(prev => (prev.concat({
+            ...item,
+            item: result.data,
+            video: result.data.items[0].id.videoId,
+            image: result.data.items[0].snippet.thumbnails.medium.url,
+          }).sort(function (a, b) { return a.index - b.index })))
+        }).catch(err => console.log(err))
+    })
+  }
 
   return (
     // console.log(images),
