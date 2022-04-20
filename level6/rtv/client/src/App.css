@@ -13,12 +13,16 @@ nav {
 
 .profile {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .public {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .issue {
@@ -64,4 +68,18 @@ background-color: rgba(223, 33, 33, 0.655);
 
 .auth > p {
   text-decoration: underline;
+}
+.issueForm {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  margin: 2rem auto 1rem;
+  border: 3px black solid;
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+.issueList {
+  display: flex;
+  flex-direction: row;
 }

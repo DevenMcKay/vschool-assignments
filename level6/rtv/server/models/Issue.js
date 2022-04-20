@@ -10,7 +10,7 @@ const issueSchema = new Schema({
     type: String
   },
   vote: {
-    type: number
+    type: Number
   },
   user: {
     type: Schema.Types.ObjectId,

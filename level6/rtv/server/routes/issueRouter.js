@@ -13,6 +13,17 @@ issueRouter.get("/", (req,res,next)=> {
   })
 })
 
+// GET USER ISSUES
+issueRouter.get("/user", (req, res, next)=> {
+  Issue.find({ user: req.user._id}, (err, issues)=>{
+    if (err) {
+      res.status(500)
+      return next(err)
+    }
+    return res.status(200).send(issues)
+  })
+})
+
 // ADD ISSUE
 issueRouter.post("/", (req,res,next) => {
   req.body.user = req.user._id

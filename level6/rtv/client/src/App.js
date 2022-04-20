@@ -1,5 +1,6 @@
 import './App.css'
-import {Routes, Route, Redirect, useContext } from 'react-router-dom'
+import React, {useContext} from 'react'
+import {Routes, Route, Navigate} from 'react-router-dom'
 import Nav from './components/Nav'
 import Profile from './components/Profile'
 import Public from './components/Public'
@@ -8,14 +9,14 @@ import {UserContext} from './context/UserProvider'
 
 
 function App() {
-
+  const {token, logout} = useContext(UserContext)
   return (
     <div className="App">
-      <Nav />
+      <Nav logout={logout}/>
         <Routes>
           <Route 
             exact path="/"
-            element={<Auth/>}
+            element={token ? <Navigate replace to="/profile"/>:<Auth/>}
           />
           <Route
             path="/profile"
