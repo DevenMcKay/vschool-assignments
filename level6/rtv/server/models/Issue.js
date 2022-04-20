@@ -17,8 +17,8 @@ const issueSchema = new Schema({
     ref: "User",
     required: true
   },
-  $inc:
-    { upvote: 1, downvote: -1 }
+  // $inc:
+  //   { upvote: 1, downvote: -1 }
 })
 
 module.exports = mongoose.model('Issue', issueSchema)

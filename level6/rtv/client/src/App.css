@@ -1,38 +1,67 @@
-.App {
+.app {
+  background-color: azure;
+}
+
+nav {
+  background-color: rgb(252, 130, 130);
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: .5rem;
+  margin-bottom: 3rem;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+}
+
+.public {
+  display: flex;
+  flex-direction: row;
+}
+
+.issue {
+  margin: 1rem auto;
+
+}
+
+.vote-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.vote-container div {
+  display: flex;
+  gap:3px;
+}
+
+.vote-container div button {
+width: 3rem;
+border-radius: 20px;
+/* border: none; */
+background-color: rgba(223, 33, 33, 0.655);
+}
+
+.auth {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.authForm {
+  margin: 2rem auto 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 20rem;
+  text-align: center;
+  padding: 3rem;
+  border: 3px black solid;
+  border-radius: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.authForm input {
+  margin-bottom: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.auth > p {
+  text-decoration: underline;
 }

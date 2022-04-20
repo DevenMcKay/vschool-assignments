@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import {Routes, Route, Redirect, useContext } from 'react-router-dom'
+import Nav from './components/Nav'
+import Profile from './components/Profile'
+import Public from './components/Public'
+import Auth from './components/Auth'
+import {UserContext} from './context/UserProvider'
+
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+        <Routes>
+          <Route 
+            exact path="/"
+            element={<Auth/>}
+          />
+          <Route
+            path="/profile"
+            element={<Profile />}
+          />
+          <Route
+            path="/public"
+            element={<Public />}
+          />
+        </Routes>
     </div>
-  );
+  )
 }
 
 export default App;
