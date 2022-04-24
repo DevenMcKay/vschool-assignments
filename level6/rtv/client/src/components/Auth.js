@@ -31,7 +31,7 @@ export default function Auth() {
   return (
     <div className="auth">
       <h1>Vote!</h1>
-      {!toggle ?
+      {toggle ?
         <>
           <AuthForm
             handleChange={handleChange}

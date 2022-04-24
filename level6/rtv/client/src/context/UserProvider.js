@@ -18,7 +18,14 @@ export default function UserProvider(props) {
     issues: []
   }
 
+  function getAllIssues() {
+    userAxios.get("/api/issue")    
+    .then(res=> setIssueList(res.data))
+    .catch(err=> console.log(err))
+  }
+
   const [userState, setUserState] = useState(initState)
+  const [issueList, setIssueList] = useState()
 
   function signup(credentials) {
     axios.post("/auth/signup", credentials)
@@ -26,6 +33,7 @@ export default function UserProvider(props) {
         const { user, token } = res.data
         localStorage.setItem('token', token)
         localStorage.setItem('user', JSON.stringify(user))
+        getAllIssues()
         setUserState(prevUserState => ({
           ...prevUserState,
           user,
@@ -41,6 +49,7 @@ export default function UserProvider(props) {
         const { user, token } = res.data
         localStorage.setItem("token", token)
         localStorage.setItem("user", JSON.stringify(user))
+        getAllIssues()
         getUserIssues()
         setUserState(prevUserState => ({
           ...prevUserState,
@@ -78,6 +87,11 @@ export default function UserProvider(props) {
         ...prevUserState,
         issues: [...prevUserState.issues, res.data]
       }))
+// ******** ISSUES LIST NEEDS UPDATED ON ADD 
+      // setIssueList(prevState => ({
+      //   ...prevState,
+      //   res.data
+      // }))
     })
     .catch(err=> console.log(err.response.data.errMsg))
   }
@@ -90,7 +104,8 @@ export default function UserProvider(props) {
         signup,
         login,
         logout, 
-        addIssue
+        addIssue,
+        issueList
       }}>
       {props.children}
     </UserContext.Provider>
