@@ -1,12 +1,12 @@
-import React, {useContext} from "react"
+import React from "react"
 import Issue from "./Issue"
 
-export default function IssueList(props){
-  const {issues} = props
+export default function IssueList(props) {
+  const { issues, upVote, downVote } = props
 
-  return(
+  return (
     <div className="issueList">
-      {issues.map(issue => <Issue key={issue._id} {...issue}/>)}
+      {issues ? issues.map(issue => <Issue key={issue._id} {...issue} upVote={upVote} downVote={downVote} />) : null}
     </div>
   )
 }

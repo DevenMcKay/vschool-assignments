@@ -3,10 +3,13 @@ import IssueList from "./IssueList"
 import { UserContext } from "../context/UserProvider"
 
 export default function Public() {
-  const { issueList } = useContext(UserContext)
+  const {
+    issueList,
+    upVote,
+    downVote } = useContext(UserContext)
   return (
     <div className="public">
-      <IssueList issues={issueList} />
+      <IssueList issues={issueList} upVote={upVote} downVote={downVote} />
     </div>
   )
 }

@@ -3,12 +3,13 @@ import { UserContext } from "../context/UserProvider"
 import IssueForm from './IssueForm'
 import IssueList from "./IssueList"
 
-
 export default function Profile() {
   const { user: {
     username
   },
     addIssue,
+    upVote,
+    downVote,
     issues
   } = useContext(UserContext)
 
@@ -17,7 +18,7 @@ export default function Profile() {
       <h1>Welcome {username}!</h1>
       <IssueForm addIssue={addIssue} />
       <h3>Your Issues</h3>
-      <IssueList issues={issues} />
+      <IssueList issues={issues} upVote={upVote} downVote={downVote}/>
     </div>
   )
 }

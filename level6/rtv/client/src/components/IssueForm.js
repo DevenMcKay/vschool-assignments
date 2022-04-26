@@ -1,12 +1,17 @@
-import React, {useState} from "react"
+import React, {useState, useContext} from "react"
+import { UserContext } from "../context/UserProvider"
 
-const initInputs = {
-  title: "", 
-  description: ""
-}
 
 export default function IssueFrom(props) {
   const {addIssue} = props
+  const {user} = useContext(UserContext)
+  
+  const initInputs = {
+    title: "", 
+    description: "",
+    username: user.username
+  }
+  
   const [inputs,setInputs] = useState(initInputs)
 
   function handleChange(e) {

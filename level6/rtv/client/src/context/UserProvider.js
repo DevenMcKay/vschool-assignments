@@ -5,7 +5,7 @@ export const UserContext = React.createContext()
 
 // INSERTS TOKEN PRIOR TO REQUEST
 const userAxios = axios.create()
-userAxios.interceptors.request.use(config=> {
+userAxios.interceptors.request.use(config => {
   const token = localStorage.getItem("token")
   config.headers.Authorization = `Bearer ${token}`
   return config
@@ -19,9 +19,9 @@ export default function UserProvider(props) {
   }
 
   function getAllIssues() {
-    userAxios.get("/api/issue")    
-    .then(res=> setIssueList(res.data))
-    .catch(err=> console.log(err))
+    userAxios.get("/api/issue")
+      .then(res => setIssueList(res.data))
+      .catch(err => console.log(err))
   }
 
   const [userState, setUserState] = useState(initState)
@@ -63,7 +63,7 @@ export default function UserProvider(props) {
   function logout() {
     localStorage.removeItem("token")
     localStorage.removeItem("user")
-    setUserState ({
+    setUserState({
       user: {},
       token: "",
       issues: []
@@ -72,30 +72,77 @@ export default function UserProvider(props) {
 
   function getUserIssues() {
     userAxios.get("/api/issue/user")
-    .then(res => {
-      setUserState(prevUserState => ({
-        ...prevUserState,
-        issues: res.data
-      }))
-    })
+      .then(res => {
+        setUserState(prevUserState => ({
+          ...prevUserState,
+          issues: res.data
+        }))
+      })
   }
 
   function addIssue(newIssue) {
     userAxios.post("/api/issue", newIssue)
-    .then(res => {
-      setUserState(prevUserState => ({
-        ...prevUserState,
-        issues: [...prevUserState.issues, res.data]
-      }))
-// ******** ISSUES LIST NEEDS UPDATED ON ADD 
-      // setIssueList(prevState => ({
-      //   ...prevState,
-      //   res.data
-      // }))
-    })
-    .catch(err=> console.log(err.response.data.errMsg))
+      .then(res => {
+        setUserState(prevUserState => ({
+          ...prevUserState,
+          issues: [...prevUserState.issues, res.data]
+        }))
+        getAllIssues()
+      })
+      .catch(err => console.log(err.response.data.errMsg))
   }
 
+  function upVote(votedIssue) {
+    issueList.forEach(issue => {
+      if (issue._id === votedIssue && userState.user._id === issue.user) {
+       console.log("User cannot self-vote")
+      } else if (issue._id === votedIssue && issue.votedUsers.includes(userState.user._id)) {
+        console.log("User already voted")
+      } else if (issue._id === votedIssue) {
+        userAxios.put(`api/issue/upvote/${votedIssue}`)
+          .then(res => {
+            const updatedIssueArr = issueList.map(issue => {
+              if (votedIssue === issue._id) {
+                return res.data
+              } else {
+                return issue
+              }
+            })
+            setIssueList(
+              updatedIssueArr
+            )
+          })
+      } 
+    })
+  }
+
+  function downVote(votedIssue) {
+    issueList.forEach(issue => {
+      if (issue._id === votedIssue && userState.user._id === issue.user) {
+        return console.log("User cannot self-vote")
+      } else if (issue._id === votedIssue && issue.votedUsers.includes(userState.user._id)) {
+        return console.log("User already voted")
+      } else if (issue._id === votedIssue) {
+        userAxios.put(`api/issue/downvote/${votedIssue}`)
+          .then(res => {
+            const updatedIssueArr = issueList.map(issue => {
+              if (votedIssue === issue._id) {
+                return res.data
+              } else {
+                return issue
+              }
+            })
+            setIssueList(
+              updatedIssueArr
+            )
+          })
+      }
+    })
+  }
+
+  function addComment(commentIssue) {
+
+  }
 
   return (
     <UserContext.Provider
@@ -103,9 +150,11 @@ export default function UserProvider(props) {
         ...userState,
         signup,
         login,
-        logout, 
+        logout,
         addIssue,
-        issueList
+        issueList,
+        upVote,
+        downVote
       }}>
       {props.children}
     </UserContext.Provider>

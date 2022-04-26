@@ -6,6 +6,8 @@ export default function CommentForm() {
         <textarea
         placeholder="Comment">
         </textarea>
+        <p>userName</p>
+        <button>Save</button>
     </div>
   )
 }
