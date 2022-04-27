@@ -26,6 +26,7 @@ export default function UserProvider(props) {
 
   const [userState, setUserState] = useState(initState)
   const [issueList, setIssueList] = useState()
+  const [page, setPage] = useState("")
 
   function signup(credentials) {
     axios.post("/auth/signup", credentials)
@@ -94,14 +95,14 @@ export default function UserProvider(props) {
 
   function deleteIssue(issueId) {
     userAxios.delete(`/api/issue/${issueId}`)
-    const filteredArr = issueList.filter(issue=> {
-      if (issueId!==issue._id) {
+    const filteredArr = issueList.filter(issue => {
+      if (issueId !== issue._id) {
         return issue
       }
     })
-      setIssueList(
-        filteredArr
-      )
+    setIssueList(
+      filteredArr
+    )
   }
 
   function upVote(votedIssue) {
@@ -153,11 +154,28 @@ export default function UserProvider(props) {
   }
 
   function addComment(commentIssue, issueId) {
-    userAxios.put(`/api/issue/comment/${issueId}`, commentIssue)
+    userAxios.put(`/api/issue/addcomment/${issueId}`, commentIssue)
       .then(res => {
         const updateCommentsArr = issueList.map(issue => {
           if (issueId === issue._id) {
             issue.comments.push(commentIssue)
+            return issue
+          } else {
+            return issue
+          }
+        })
+        setIssueList(
+          updateCommentsArr
+        )
+      })
+  }
+
+  function deleteComment(comments, issueId) {
+    userAxios.put(`/api/issue/deletecomment/${issueId}`, comments)
+      .then(res => {
+        const updateCommentsArr = issueList.map(issue => {
+          if (issueId === issue._id) {
+            issue = res.data
             return issue
           } else {
             return issue
@@ -181,7 +199,10 @@ export default function UserProvider(props) {
         issueList,
         upVote,
         downVote,
-        addComment
+        addComment,
+        deleteComment,
+        setPage,
+        page
       }}>
       {props.children}
     </UserContext.Provider>

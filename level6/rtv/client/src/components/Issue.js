@@ -1,30 +1,52 @@
-import React, {useState}from "react"
+import React, { useState } from "react"
 import CommentList from "./CommentList"
 import CommentForm from "./CommentForm"
 
 export default function Issue(props) {
-  const { title, description, votes, upVote, downVote, _id, username, comments, deleteIssue } = props
+  const {
+    title,
+    description,
+    votes,
+    upVote,
+    downVote,
+    _id,
+    username,
+    comments,
+    deleteComment,
+    deleteIssue,
+    page } = props
   const [addComment, setAddComment] = useState(false)
+
+  function deleteButton() {
+    if (page === "profile") {
+      return <button onClick={() => deleteIssue(_id)}>Delete</button>
+    } else { return null }
+  }
+
   return (
-  <div>
-    <div className="issue">
-      <h2>{title}</h2>
-     <button onClick={()=>deleteIssue(_id)}>Delete</button>
-      <p>{username}</p>
-      <p>{description}</p>
-      <div className="vote-container">
-        <div>
-          <button onClick={()=>upVote(_id)}>⬆</button>
-          <p>{votes}</p>
-          <button onClick={()=>downVote(_id)}>⬇</button>
-        </div>
-        <div>
-          <button onClick={()=>{setAddComment(!addComment)}}>✚ 💬</button>
+    <div>
+      <div className="issue">
+        <h2>{title}</h2>
+        {deleteButton()}
+        <p>{username}</p>
+        <p>{description}</p>
+        <div className="vote-container">
+          <div>
+            <button onClick={() => upVote(_id)}>⬆</button>
+            <p>{votes}</p>
+            <button onClick={() => downVote(_id)}>⬇</button>
+          </div>
+          <div>
+            <button onClick={() => { setAddComment(!addComment) }}>✚ 💬</button>
+          </div>
         </div>
       </div>
+      <CommentList
+        comments={comments}
+        _id={_id}
+        page={page}
+        deleteComment={deleteComment} />
+      {addComment && <CommentForm _id={_id} setAddComment={setAddComment} />}
     </div>
-    <CommentList comments={comments} id={_id}/>
-    {addComment && <CommentForm _id={_id} setAddComment={setAddComment}/>}
-  </div>
   )
 }

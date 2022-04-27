@@ -104,13 +104,34 @@ issueRouter.put("/downvote/:issueId", (req, res, next) => {
 })
 
 // ADD COMMENT 
-issueRouter.put("/comment/:issueId", (req, res, next) => {
+issueRouter.put("/addcomment/:issueId", (req, res, next) => {
   Issue.findOneAndUpdate(
     { _id: req.params.issueId },
     {
-      $push: {comments: {username: req.user.username, comment: req.body.comment}}
+      $push: { comments: { username: req.user.username, comment: req.body.comment } }
     },
     { new: true },
+    (err, updatedIssue) => {
+      if (err) {
+        res.status(500)
+        return next(err)
+      }
+      return res.status(201).send(updatedIssue)
+    }
+  )
+})
+
+// DELETE COMMENT 
+issueRouter.put("/deletecomment/:issueId", (req, res, next) => {
+  console.log("$$$", req.body),
+  Issue.findOneAndUpdate(
+    { _id: req.params.issueId },
+    {
+
+      $pull: { comments: req.body }
+
+    },
+    {new:true},
     (err, updatedIssue) => {
       if (err) {
         res.status(500)
