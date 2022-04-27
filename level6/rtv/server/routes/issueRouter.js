@@ -108,7 +108,7 @@ issueRouter.put("/comment/:issueId", (req, res, next) => {
   Issue.findOneAndUpdate(
     { _id: req.params.issueId },
     {
-      $push: {comments: {comment:comment, user:req.user.username}}
+      $push: {comments: {username: req.user.username, comment: req.body.comment}}
     },
     { new: true },
     (err, updatedIssue) => {

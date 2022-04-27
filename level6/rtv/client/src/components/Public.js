@@ -6,10 +6,12 @@ export default function Public() {
   const {
     issueList,
     upVote,
-    downVote } = useContext(UserContext)
+    downVote,
+  deleteIssue } = useContext(UserContext)
+
   return (
     <div className="public">
-      <IssueList issues={issueList} upVote={upVote} downVote={downVote} />
+      <IssueList issues={issueList} upVote={upVote} downVote={downVote} deleteIssue={deleteIssue}/>
     </div>
   )
 }

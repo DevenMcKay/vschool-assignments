@@ -90,8 +90,18 @@ background-color: rgba(223, 33, 33, 0.655);
 }
 
 .issue {
-  width: calc(100%/4);
+  /* width: calc(100%/4); */
   background-color: red;
   padding: 1rem;
   border: black 5px solid;
+}
+
+.comment {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.comment > p {
+  font-weight: bold;
 }

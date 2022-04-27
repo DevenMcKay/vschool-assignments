@@ -1,11 +1,11 @@
 import React from 'react'
 
 export default function Comment(props) {
-  const {comments} = props
-  return(
+  const { comment, username } = props
+  return (
     <div className='comment'>
-     <p>{comments}</p>
-     <p>#Username</p>
+      <p>{username} :</p>
+      <p>&nbsp;{comment}</p>
     </div>
   )
 }

@@ -92,10 +92,22 @@ export default function UserProvider(props) {
       .catch(err => console.log(err.response.data.errMsg))
   }
 
+  function deleteIssue(issueId) {
+    userAxios.delete(`/api/issue/${issueId}`)
+    const filteredArr = issueList.filter(issue=> {
+      if (issueId!==issue._id) {
+        return issue
+      }
+    })
+      setIssueList(
+        filteredArr
+      )
+  }
+
   function upVote(votedIssue) {
     issueList.forEach(issue => {
       if (issue._id === votedIssue && userState.user._id === issue.user) {
-       console.log("User cannot self-vote")
+        console.log("User cannot self-vote")
       } else if (issue._id === votedIssue && issue.votedUsers.includes(userState.user._id)) {
         console.log("User already voted")
       } else if (issue._id === votedIssue) {
@@ -112,7 +124,7 @@ export default function UserProvider(props) {
               updatedIssueArr
             )
           })
-      } 
+      }
     })
   }
 
@@ -140,8 +152,21 @@ export default function UserProvider(props) {
     })
   }
 
-  function addComment(commentIssue) {
-
+  function addComment(commentIssue, issueId) {
+    userAxios.put(`/api/issue/comment/${issueId}`, commentIssue)
+      .then(res => {
+        const updateCommentsArr = issueList.map(issue => {
+          if (issueId === issue._id) {
+            issue.comments.push(commentIssue)
+            return issue
+          } else {
+            return issue
+          }
+        })
+        setIssueList(
+          updateCommentsArr
+        )
+      })
   }
 
   return (
@@ -152,9 +177,11 @@ export default function UserProvider(props) {
         login,
         logout,
         addIssue,
+        deleteIssue,
         issueList,
         upVote,
-        downVote
+        downVote,
+        addComment
       }}>
       {props.children}
     </UserContext.Provider>

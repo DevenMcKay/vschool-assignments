@@ -26,7 +26,7 @@ const issueSchema = new Schema({
     type: [String]
   },
   comments: {
-    type: [String]
+    type: [Object]
   }
 })
 
