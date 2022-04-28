@@ -146,14 +146,18 @@ h2 {
 
 .comment {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  margin: 3rem 0;
-  padding: 2rem 0;
+  margin: 1rem 0 0;
+  padding: 1rem 1rem 1rem;
   border-bottom: 1px rgb(212, 212, 212) solid;
 }
 
-.commentInput p:first-of-type {
+.comment>p {
   font-weight: bold;
+}
+.commentInput > p:first-of-type {
+  font-weight: bolder;
 }
 
 .comment button {
@@ -200,6 +204,10 @@ h2 {
   1px 1px 0 rgb(42, 42, 42);
 }
 
+.public .issueList {
+  margin-top: 1rem;
+}
+
 .issueList {
   display: flex;
   flex-direction: row;
@@ -230,12 +238,8 @@ h2 {
   padding-right: 2.5rem;
 }
 
-.comment {
-  padding: 0 1rem;
-  display: flex;
-  flex-direction: row;
-}
 
-.comment>p {
-  font-weight: bold;
+
+.commentList > h2 {
+  margin-top: .5rem;
 }
