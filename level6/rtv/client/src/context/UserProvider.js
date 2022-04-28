@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 export const UserContext = React.createContext()
@@ -19,16 +19,28 @@ export default function UserProvider(props) {
     errMsg: ""
   }
 
-  function getAllIssues() {
-    userAxios.get("/api/issue")
-      .then(res => setIssueList(res.data))
-      .catch(err => console.log(err))
-  }
-
   const [userState, setUserState] = useState(initState)
   const [issueList, setIssueList] = useState()
   const [page, setPage] = useState("")
   const [userErr, setUserErr] = useState("")
+
+  // useEffect(() => {
+  //   sortByVotes()
+  // }, [issueList])
+
+  function sortByVotes() {
+    issueList && issueList.sort((a, b) => {
+      return a.votes - b.votes
+    })
+  }
+
+  function getAllIssues() {
+    userAxios.get("/api/issue")
+      .then(res => setIssueList(res.data))
+      .then(sortByVotes())
+      .catch(err => console.log(err))
+
+  }
 
   function signup(credentials) {
     axios.post("/auth/signup", credentials)
@@ -130,6 +142,7 @@ export default function UserProvider(props) {
       } else if (issue._id === votedIssue && issue.votedUsers.includes(userState.user._id)) {
         return setUserErr("User already voted")
       } else if (issue._id === votedIssue) {
+        setUserErr("")
         userAxios.put(`api/issue/upvote/${votedIssue}`)
           .then(res => {
             const updatedIssueArr = issueList.map(issue => {
@@ -144,7 +157,7 @@ export default function UserProvider(props) {
             )
           })
           .catch(err => console.log(err))
-      } else {return null}
+      } else { return null }
     })
   }
 
@@ -155,7 +168,8 @@ export default function UserProvider(props) {
       } else if (issue._id === votedIssue && issue.votedUsers.includes(userState.user._id)) {
         return setUserErr("User already voted")
       } else if (issue._id === votedIssue) {
-        userAxios.put(`api/issue/downvote/${votedIssue}`)
+        setUserErr("")
+       return userAxios.put(`api/issue/downvote/${votedIssue}`)
           .then(res => {
             const updatedIssueArr = issueList.map(issue => {
               if (votedIssue === issue._id) {
@@ -227,7 +241,8 @@ export default function UserProvider(props) {
         page,
         resetAuthErr,
         userErr,
-        setUserErr
+        setUserErr,
+        sortByVotes
       }}>
       {props.children}
     </UserContext.Provider>

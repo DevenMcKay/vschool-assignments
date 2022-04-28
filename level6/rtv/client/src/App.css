@@ -1,8 +1,9 @@
 .App {
   /* background-color: azure; */
   background-image: url("./components/images/flag.jpg");
-  background-size: cover;
-  height: 100%;
+  background-size:cover;
+  /* background-position: center; */
+  height: 230vh;
   width: 100vw;
 }
 
@@ -33,7 +34,7 @@ nav a:hover {
 
 h1 {
   padding: .5rem;
-  background-color: aliceblue;
+  background-color: rgba(240, 248, 255, 0.724);
   height: 3rem;
 }
 
@@ -105,6 +106,16 @@ h2 {
   height: 100vh;
 }
 
+.auth> p {
+  text-shadow:
+		-1px -1px 0 rgb(42, 42, 42),
+		1px -1px 0 rgb(42, 42, 42),
+		-1px 1px 0 rgb(42, 42, 42),
+		1px 1px 0 rgb(42, 42, 42);
+  color: rgb(229, 229, 229);
+  font-size: 1.7rem;
+}
+
 .authForm {
   margin: 2rem auto 1rem;
   display: flex;
@@ -119,7 +130,9 @@ h2 {
 .authForm input {
   margin-bottom: 1rem;
 }
-
+.authForm> p{
+  margin-top: 1rem;
+}
 .auth>p {
   text-decoration: underline;
 }
@@ -176,6 +189,15 @@ h2 {
   border-radius: .5rem;
   padding: 2rem 2.5rem;
   gap: 1rem;
+}
+
+.profile > h2 {
+  margin: 1rem 0;
+  text-shadow:
+  -1px -1px 0 rgb(42, 42, 42),
+  1px -1px 0 rgb(42, 42, 42),
+  -1px 1px 0 rgb(42, 42, 42),
+  1px 1px 0 rgb(42, 42, 42);
 }
 
 .issueList {

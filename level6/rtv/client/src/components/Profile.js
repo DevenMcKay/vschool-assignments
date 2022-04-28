@@ -17,7 +17,8 @@ export default function Profile() {
     setPage,
     page,
     userErr,
-    setUserErr
+    setUserErr,
+    sortByVotes
   } = useContext(UserContext)
 
   const userIssueList =
@@ -30,6 +31,7 @@ export default function Profile() {
 
       useEffect(() => {
         setPage("profile")
+        sortByVotes()
       }, [])
       
       return (

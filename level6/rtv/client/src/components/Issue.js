@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import CommentList from "./CommentList"
 import CommentForm from "./CommentForm"
 
@@ -28,17 +28,10 @@ export default function Issue(props) {
     } else { return null }
   }
 
-  useEffect(() => {
-    setUserErr("")
-  }, [])
-
-  // useEffect(()=> {
-
-  // }, [userErr])
-
   function displayError(id) {
     if (id === _id) {
       setIsError(!isError)
+      setTimeout(()=>{ return (setIsError(false))}, 2000)
     } else { return null }
   }
 

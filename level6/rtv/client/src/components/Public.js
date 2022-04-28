@@ -10,10 +10,12 @@ export default function Public() {
     deleteIssue,
     setPage,
     userErr,
-    setUserErr } = useContext(UserContext)
+    setUserErr, 
+    sortByVotes } = useContext(UserContext)
 
   useEffect(() => {
     setPage("public")
+    sortByVotes()
   }, [])
 
   return (
