@@ -15,7 +15,9 @@ export default function Profile() {
     deleteIssue,
     deleteComment,
     setPage,
-    page
+    page,
+    userErr,
+    setUserErr
   } = useContext(UserContext)
 
   const userIssueList =
@@ -34,14 +36,16 @@ export default function Profile() {
     <div className="profile">
       <h1>Welcome {username}!</h1>
       <IssueForm addIssue={addIssue} />
-      <h3>Your Issues</h3>
+      <h2>Your Issues</h2>
       <IssueList
         issues={userIssueList}
         upVote={upVote}
         downVote={downVote}
         deleteIssue={deleteIssue}
         deleteComment={deleteComment}
-        page={page} />
+        page={page}
+        userErr={userErr}
+        setUserErr={setUserErr} />
     </div>
   )
 }

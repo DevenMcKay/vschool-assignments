@@ -2,7 +2,8 @@ import React from "react"
 import Issue from "./Issue"
 
 export default function IssueList(props) {
-  const { issues, upVote, downVote, deleteIssue, page, deleteComment } = props
+  const { issues, upVote, downVote, deleteIssue, page, deleteComment, userErr,
+  setUserErr } = props
 
   return (
     <div className="issueList">
@@ -13,8 +14,11 @@ export default function IssueList(props) {
           upVote={upVote}
           downVote={downVote}
           deleteComment={deleteComment}
-          deleteIssue={deleteIssue} 
-          page={page}/>) : null}
+          deleteIssue={deleteIssue}
+          page={page}
+          userErr={userErr}
+          setUserErr={setUserErr} />
+      ) : null}
     </div>
   )
 }

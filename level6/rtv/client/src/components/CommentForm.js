@@ -19,7 +19,7 @@ export default function CommentForm({_id, setAddComment}) {
   addComment(input, _id)
  }
   return(
-    <form className="CommentForm" onSubmit={handleSubmit}>
+    <form className="commentForm" onSubmit={handleSubmit}>
         <textarea
         type="text"
         name="comment"

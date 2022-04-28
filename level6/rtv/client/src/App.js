@@ -12,7 +12,7 @@ function App() {
   const { token, logout } = useContext(UserContext)
   return (
     <div className="App">
-      <Nav logout={logout} />
+      <Nav logout={logout} token={token} />
       <Routes>
         <Route
           path="/"
@@ -20,11 +20,11 @@ function App() {
         />
         <Route
           path="/profile"
-          element={token ? <Profile /> : <Navigate replace to="/"/>}
+          element={token ? <Profile /> : <Navigate replace to="/" />}
         />
         <Route
           path="/public"
-          element={token ? <Public /> : <Navigate replace to="/"/>}
+          element={token ? <Public /> : <Navigate replace to="/" />}
         />
       </Routes>
     </div>

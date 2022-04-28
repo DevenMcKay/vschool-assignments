@@ -5,6 +5,7 @@ export default function AuthFrom(props) {
     handleChange,
     handleSubmit,
     btnText,
+    errMsg,
     inputs: {
       username,
       password
@@ -28,6 +29,7 @@ export default function AuthFrom(props) {
         placeholder="Password"
       />
       <button>{btnText}</button>
+      <p style={{color:"red"}}>{errMsg}</p>
     </form>
   )
 }

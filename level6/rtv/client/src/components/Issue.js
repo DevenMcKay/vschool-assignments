@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import CommentList from "./CommentList"
 import CommentForm from "./CommentForm"
 
@@ -7,6 +7,7 @@ export default function Issue(props) {
     title,
     description,
     votes,
+    imgUrl,
     upVote,
     downVote,
     _id,
@@ -14,32 +15,56 @@ export default function Issue(props) {
     comments,
     deleteComment,
     deleteIssue,
-    page } = props
+    page,
+    userErr,
+    setUserErr } = props
+
   const [addComment, setAddComment] = useState(false)
+  const [isError, setIsError] = useState(false)
 
   function deleteButton() {
     if (page === "profile") {
-      return <button onClick={() => deleteIssue(_id)}>Delete</button>
+      return <button className="deleteIssueBtn" onClick={() => deleteIssue(_id)}>Delete</button>
+    } else { return null }
+  }
+
+  useEffect(() => {
+    setUserErr("")
+  }, [])
+
+  // useEffect(()=> {
+
+  // }, [userErr])
+
+  function displayError(id) {
+    if (id === _id) {
+      setIsError(!isError)
     } else { return null }
   }
 
   return (
-    <div>
-      <div className="issue">
-        <h2>{title}</h2>
-        {deleteButton()}
-        <p>{username}</p>
-        <p>{description}</p>
+    <div className="issue">
+      <div >
+        <div className="issueTitle">
+          <h2>{title}</h2>
+          {deleteButton()}
+        </div>
+        <img src={imgUrl} alt={title}></img>
+        <div className="userDescription">
+          <p>{description}</p>
+          <p className="username">- {username}</p>
+        </div>
         <div className="vote-container">
           <div>
-            <button onClick={() => upVote(_id)}>⬆</button>
+            <button onClick={() => { return (upVote(_id), displayError(_id)) }}>⬆</button>
             <p>{votes}</p>
-            <button onClick={() => downVote(_id)}>⬇</button>
+            <button onClick={() => { return (downVote(_id), displayError(_id)) }}>⬇</button>
           </div>
           <div>
             <button onClick={() => { setAddComment(!addComment) }}>✚ 💬</button>
           </div>
         </div>
+        {isError && userErr}
       </div>
       <CommentList
         comments={comments}

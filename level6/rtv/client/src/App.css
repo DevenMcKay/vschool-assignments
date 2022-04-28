@@ -1,14 +1,27 @@
-.app {
-  background-color: azure;
+.App {
+  /* background-color: azure; */
+  background-image: url("./components/images/flag.jpg");
+  background-size: cover;
+  height: 100%;
+  width: 100vw;
 }
 
 nav {
-  background-color: rgb(252, 130, 130);
-  height: 100%;
+  background-color: rgb(24, 24, 24);
+  height: 2.2rem;
   display: flex;
   justify-content: space-around;
   padding: .5rem;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
+}
+
+nav a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 .profile {
@@ -16,6 +29,29 @@ nav {
   flex-direction: column;
   margin: 0 auto;
   text-align: center;
+}
+
+h1 {
+  padding: .5rem;
+  background-color: aliceblue;
+  height: 3rem;
+}
+
+.issue h2 {
+  color: black;
+  text-decoration: none;
+}
+
+h2 {
+  text-decoration: underline;
+  color: aliceblue;
+}
+
+.authForm,
+.issueForm,
+.comment,
+.issue {
+  background-color: aliceblue;
 }
 
 .public {
@@ -27,7 +63,19 @@ nav {
 
 .issue {
   margin: 1rem auto;
+  width: 50%;
+  height: max-content;
+}
 
+.issueTitle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.issueTitle button {
+  border-radius: 3px;
+  padding: 3px;
 }
 
 .vote-container {
@@ -36,20 +84,25 @@ nav {
   gap: 1rem;
 }
 
+.vote-container p {
+  width: 2rem;
+  line-height: 2rem;
+}
+
 .vote-container div {
   display: flex;
-  gap:3px;
+  gap: 3px;
 }
 
 .vote-container div button {
-width: 3rem;
-border-radius: 20px;
-/* border: none; */
-background-color: rgba(223, 33, 33, 0.655);
+  width: 3rem;
+  border-radius: .5rem;
+  /* border: none; */
 }
 
 .auth {
   text-align: center;
+  height: 100vh;
 }
 
 .authForm {
@@ -59,7 +112,7 @@ background-color: rgba(223, 33, 33, 0.655);
   width: 20rem;
   text-align: center;
   padding: 3rem;
-  border: 3px black solid;
+  border: 2px black solid;
   border-radius: 1rem;
 }
 
@@ -67,8 +120,51 @@ background-color: rgba(223, 33, 33, 0.655);
   margin-bottom: 1rem;
 }
 
-.auth > p {
+.auth>p {
   text-decoration: underline;
+}
+
+.userDescription {
+  border: 1px rgb(198, 193, 193) solid;
+  margin: 1rem 0;
+  padding: .5rem;
+  border-radius: 3px;
+}
+
+.comment {
+  display: flex;
+  justify-content: space-between;
+  margin: 3rem 0;
+  padding: 2rem 0;
+  border-bottom: 1px rgb(212, 212, 212) solid;
+}
+
+.commentInput p:first-of-type {
+  font-weight: bold;
+}
+
+.comment button {
+  height: 2rem;
+}
+
+.commentInput {
+  display: flex;
+  padding-bottom: 2rem;
+}
+
+.commentForm {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  height: 3rem;
+}
+
+.commentForm textarea {
+  width: 80%;
+}
+
+.commentForm button {
+  border-radius: 3px;
 }
 
 .issueForm {
@@ -76,24 +172,40 @@ background-color: rgba(223, 33, 33, 0.655);
   flex-direction: column;
   width: 20rem;
   margin: 2rem auto 1rem;
-  border: 3px black solid;
-  border-radius: 1rem;
-  padding: 3rem;
+  border: 2px black solid;
+  border-radius: .5rem;
+  padding: 2rem 2.5rem;
+  gap: 1rem;
 }
 
 .issueList {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 0 1rem;
+  padding: 0 0rem;
   gap: 1rem;
+  margin: 0;
 }
 
 .issue {
-  /* width: calc(100%/4); */
-  background-color: red;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  /* width: calc(100%); */
+  border-radius: .5rem;
+  gap: .5rem;
   padding: 1rem;
-  border: black 5px solid;
+  border: black 2px solid;
+}
+
+.issue img {
+  width: 100%;
+}
+
+.issue .username {
+  color: red;
+  text-align: right;
+  padding-right: 2.5rem;
 }
 
 .comment {
@@ -102,6 +214,6 @@ background-color: rgba(223, 33, 33, 0.655);
   flex-direction: row;
 }
 
-.comment > p {
+.comment>p {
   font-weight: bold;
 }

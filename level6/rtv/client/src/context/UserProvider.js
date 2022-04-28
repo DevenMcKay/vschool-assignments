@@ -15,7 +15,8 @@ export default function UserProvider(props) {
   const initState = {
     user: JSON.parse(localStorage.getItem("user")) || {},
     token: localStorage.getItem('token') || "",
-    issues: []
+    issues: [],
+    errMsg: ""
   }
 
   function getAllIssues() {
@@ -27,6 +28,7 @@ export default function UserProvider(props) {
   const [userState, setUserState] = useState(initState)
   const [issueList, setIssueList] = useState()
   const [page, setPage] = useState("")
+  const [userErr, setUserErr] = useState("")
 
   function signup(credentials) {
     axios.post("/auth/signup", credentials)
@@ -41,7 +43,7 @@ export default function UserProvider(props) {
           token
         }))
       })
-      .catch(err => console.log(err))
+      .catch(err => handleAuthErr(err.response.data.errMsg))
   }
 
   function login(credentials) {
@@ -58,7 +60,7 @@ export default function UserProvider(props) {
           token
         }))
       })
-      .catch(err => console.log(err))
+      .catch(err => handleAuthErr(err.response.data.errMsg))
   }
 
   function logout() {
@@ -71,6 +73,20 @@ export default function UserProvider(props) {
     })
   }
 
+  function handleAuthErr(errMsg) {
+    setUserState(prevUserState => ({
+      ...prevUserState,
+      errMsg
+    }))
+  }
+
+  function resetAuthErr() {
+    setUserState(prevState => ({
+      ...prevState,
+      errMsg: ""
+    }))
+  }
+
   function getUserIssues() {
     userAxios.get("/api/issue/user")
       .then(res => {
@@ -79,6 +95,7 @@ export default function UserProvider(props) {
           issues: res.data
         }))
       })
+      .catch(err => console.log(err))
   }
 
   function addIssue(newIssue) {
@@ -103,14 +120,15 @@ export default function UserProvider(props) {
     setIssueList(
       filteredArr
     )
+      .catch(err => console.log(err))
   }
 
   function upVote(votedIssue) {
     issueList.forEach(issue => {
       if (issue._id === votedIssue && userState.user._id === issue.user) {
-        console.log("User cannot self-vote")
+        return setUserErr("User cannot self vote")
       } else if (issue._id === votedIssue && issue.votedUsers.includes(userState.user._id)) {
-        console.log("User already voted")
+        return setUserErr("User already voted")
       } else if (issue._id === votedIssue) {
         userAxios.put(`api/issue/upvote/${votedIssue}`)
           .then(res => {
@@ -125,16 +143,17 @@ export default function UserProvider(props) {
               updatedIssueArr
             )
           })
-      }
+          .catch(err => console.log(err))
+      } else {return null}
     })
   }
 
   function downVote(votedIssue) {
     issueList.forEach(issue => {
       if (issue._id === votedIssue && userState.user._id === issue.user) {
-        return console.log("User cannot self-vote")
+        return setUserErr("User cannot self vote")
       } else if (issue._id === votedIssue && issue.votedUsers.includes(userState.user._id)) {
-        return console.log("User already voted")
+        return setUserErr("User already voted")
       } else if (issue._id === votedIssue) {
         userAxios.put(`api/issue/downvote/${votedIssue}`)
           .then(res => {
@@ -149,6 +168,7 @@ export default function UserProvider(props) {
               updatedIssueArr
             )
           })
+          .catch(err => console.log(err))
       }
     })
   }
@@ -168,6 +188,7 @@ export default function UserProvider(props) {
           updateCommentsArr
         )
       })
+      .catch(err => console.log(err))
   }
 
   function deleteComment(comments, issueId) {
@@ -185,6 +206,7 @@ export default function UserProvider(props) {
           updateCommentsArr
         )
       })
+      .catch(err => console.log(err))
   }
 
   return (
@@ -202,7 +224,10 @@ export default function UserProvider(props) {
         addComment,
         deleteComment,
         setPage,
-        page
+        page,
+        resetAuthErr,
+        userErr,
+        setUserErr
       }}>
       {props.children}
     </UserContext.Provider>

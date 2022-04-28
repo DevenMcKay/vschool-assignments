@@ -123,15 +123,12 @@ issueRouter.put("/addcomment/:issueId", (req, res, next) => {
 
 // DELETE COMMENT 
 issueRouter.put("/deletecomment/:issueId", (req, res, next) => {
-  console.log("$$$", req.body),
   Issue.findOneAndUpdate(
     { _id: req.params.issueId },
     {
-
       $pull: { comments: req.body }
-
     },
-    {new:true},
+    { new: true },
     (err, updatedIssue) => {
       if (err) {
         res.status(500)

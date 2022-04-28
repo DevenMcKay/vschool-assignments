@@ -8,7 +8,9 @@ export default function Public() {
     upVote,
     downVote,
     deleteIssue,
-    setPage } = useContext(UserContext)
+    setPage,
+    userErr,
+    setUserErr } = useContext(UserContext)
 
   useEffect(() => {
     setPage("public")
@@ -21,7 +23,9 @@ export default function Public() {
         issues={issueList}
         upVote={upVote}
         downVote={downVote}
-        deleteIssue={deleteIssue} />
+        deleteIssue={deleteIssue}
+        userErr={userErr}
+        setUserErr={setUserErr} />
     </div>
   )
 }

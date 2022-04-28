@@ -9,6 +9,9 @@ const issueSchema = new Schema({
   description: {
     type: String
   },
+  imgUrl: {
+    type: String
+  }, 
   username: {
     type: String,
     required: true

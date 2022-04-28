@@ -42,4 +42,11 @@ userSchema.methods.checkPassword = function (passwordAttempt, callback) {
   })
 }
 
+// METHOD TO REMOVE USER'S PASSWORD FROM TOKEN
+userSchema.methods.withoutPassword = function() {
+  const user = this.toObject()
+  delete user.password
+  return user
+}
+
 module.exports = mongoose.model('User', userSchema)
