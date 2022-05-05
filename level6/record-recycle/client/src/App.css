@@ -1,0 +1,83 @@
+/* NAV BAR */
+nav {
+  height: 2.2rem;
+  background-color: rgb(6, 6, 6);
+  text-align: baseline;
+  display: flex;
+  justify-content: space-around;
+  padding-top: .5rem;
+  margin-bottom: 2rem;
+}
+
+nav button {
+  height: 1.4rem;
+  padding: 1px;
+}
+
+/* ALL PAGES */
+.app {
+  color: whitesmoke;
+  background-image: url("./component/images/textureBackgroundBlur.jpg");
+  background-size:cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(225, 225, 225);
+}
+
+a:hover {
+  text-decoration: underline;
+  text-decoration-color: gold;
+  text-decoration-thickness: .3rem;
+}
+
+button:hover {
+  background-color: gold;
+}
+
+main > h1 {
+  text-align: center;
+  width: 100%;
+}
+
+button {
+  border-radius: 3px;
+}
+
+.app main, .app main form  {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+/* AUTH PAGES */
+.auth form button {
+  width: 5rem;
+  margin: 0 auto;
+  padding: 2px;
+  font-size: 1rem;
+}
+
+.auth form input {
+  width: 50%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+}
+
+/* PROFILE PAGES */
+.profile form button {
+  width: 5rem;
+  margin: 0 auto;
+  padding: 2px;
+  font-size: 1rem;
+}
+
+
+/* PUBLIC PAGES */

@@ -1,25 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import {staticSound, staticUser} from '../component/staticData/staticData'
 
 export const UserContext = React.createContext()
 
-// DEFAULT DATA
-const user = {
-  title: "",
-  description: "",
-  imgUrl: "",
-  username: "",
-  user: "",
-  votedUser: "",
-  comments: "",
-  tags: [""],
-  favorite: [""]
-}
-
 const initState = {
-  user: {},
+  user: staticUser || {},
   token: "",
-  sounds: [],
+  sounds: staticSound || [],
   errMsg: ""
 }
 
@@ -29,7 +17,7 @@ export default function UserProvider(props) {
   return (
     <UserContext.Provider
       value={{
-        ...userState
+         ...userState
       }}>
       {props.children}
     </UserContext.Provider>
