@@ -6,13 +6,15 @@ export default function Public() {
   const {
     user: {
       username
-    }
+    },
+    sounds
   } = useContext(UserContext)
 
   return (
+    // console.log(sounds),
     <main className="public">
       <h1>Sounds</h1>
-      {/* <SoundList/> */}
+      <SoundList sounds={sounds}/>
     </main>
   )
 }

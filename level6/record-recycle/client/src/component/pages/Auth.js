@@ -1,9 +1,12 @@
 import React, { useState, useContext } from 'react'
 import AuthForm from './AuthForm'
+import { UserContext } from '../../context/UserProvider'
 
 const initInputs = { username: "", password: "" }
 
 export default function Auth() {
+
+  const {signup,login} = useContext(UserContext)
 
   const [inputs, setInputs] = useState(initInputs)
   const [toggle, setToggle] = useState(false)
@@ -18,16 +21,18 @@ export default function Auth() {
 
   function handleSignup(e) {
     e.preventDefault()
+    signup(inputs)
   }
 
   function handleLogin(e) {
     e.preventDefault()
+    login(inputs)
   }
 
   return (
     <main className="auth">
       <h1>Engage In Sound</h1>
-      {!toggle ?
+      {toggle ?
         <>
           <AuthForm
             handleChange={handleChange}

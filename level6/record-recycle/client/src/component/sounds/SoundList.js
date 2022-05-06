@@ -3,11 +3,18 @@ import Sound from "./Sound"
 
 export default function SoundList(props) {
 
-  const { } = props
+  const { sounds } = props
+
+  const mappedSounds =
+    sounds ? sounds.map((sound, index) =>
+      <Sound
+        key={ index}
+        {...sound}
+      />) : null
 
   return (
     <section className="soundList">
-      {/* <Sound/> */}
+      {mappedSounds}
     </section>
   )
 }

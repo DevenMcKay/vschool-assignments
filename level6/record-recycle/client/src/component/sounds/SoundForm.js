@@ -3,13 +3,13 @@ import { UserContext } from "../../context/UserProvider"
 
 export default function SoundForm(props) {
 
-  const { user:{username} } = useContext(UserContext)
+  const { user:{username, _id}, addSound } = useContext(UserContext)
 
   const initInputs = {
     title: "",
     description: "",
     imgUrl: "",
-    username
+    username: username,
   }
 
   const [inputs, setInputs] = useState(initInputs)
@@ -24,6 +24,7 @@ export default function SoundForm(props) {
 
   function handleSubmit(e) {
     e.preventDefault()
+    addSound(inputs)
   }
 
   const { title, description, imgUrl } = inputs
@@ -48,7 +49,7 @@ export default function SoundForm(props) {
       </input>
       <textarea
         name="description"
-        placeholder="description"
+        placeholder="Description"
         value={description}
         onChange={handleChange}
         type="text"

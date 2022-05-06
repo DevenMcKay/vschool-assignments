@@ -26,6 +26,7 @@ issueRouter.get("/user", (req, res, next) => {
 
 // ADD ISSUE
 issueRouter.post("/", (req, res, next) => {
+  console.log('✅', req)
   req.body.user = req.user._id
   const newIssue = new Issue(req.body)
   newIssue.save((err, savedIssue) => {

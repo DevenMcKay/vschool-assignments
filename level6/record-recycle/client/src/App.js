@@ -5,27 +5,32 @@ import Navbar from "./component/pages/Navbar"
 import Auth from "./component/pages/Auth"
 import Profile from "./component/pages/Profile"
 import Public from "./component/pages/Public"
+import About from "./component/pages/About"
 import {UserContext} from "./context/UserProvider"
 
 export default function App() {
 
-  const {sounds, user} = useContext(UserContext)
+  const {token, logout} = useContext(UserContext)
 
   return (
     <div className="app">
-      <Navbar />
+      <Navbar token={token} logout={logout} />
       <Routes>
         <Route
           path="/"
-          element={<Auth />}
+          element={token ? <Navigate replace to="/profile"/>: <Auth />}
         />
         <Route
           path="/profile"
-          element={<Profile />}
+          element={token ? <Profile /> : <Navigate replace to="/"/>}
         />
         <Route
           path="/public"
-          element={<Public />}
+          element={token ? <Public /> : <Navigate replace to="/"/>}
+        />
+        <Route
+          path="/about"
+          element={<About />}
         />
       </Routes>
     </div>
