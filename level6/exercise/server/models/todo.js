@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const todoSchema = new Schema({
   title: {
     type: String,
-    required: true
+    // required: true
   },
   description: {
     type: String
@@ -15,12 +15,19 @@ const todoSchema = new Schema({
   },
   imgUrl: {
     type: String,
-    required: true
+    // required: true
   },
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",
     required: true
+  },
+  image: {
+    data: Buffer,
+    contentType: String
+  }, 
+  name: {
+    type: String
   }
 })
 

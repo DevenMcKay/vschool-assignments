@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Schema = mongoose.Schema 
+const Schema = mongoose.Schema
 
 const soundSchema = new Schema({
   title: {
@@ -8,7 +8,7 @@ const soundSchema = new Schema({
   },
   description: {
     type: String
-  }, 
+  },
   imgUrl: {
     type: String
   },
@@ -23,9 +23,17 @@ const soundSchema = new Schema({
   },
   tags: {
     type: [String]
-  }, 
+  },
   comments: {
     type: [String]
+  },
+  fileName: {
+    type: String,
+    required: true
+  },
+  filePath: {
+    type: String,
+    required: true
   }
 })
 

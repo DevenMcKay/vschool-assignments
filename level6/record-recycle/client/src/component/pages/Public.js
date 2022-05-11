@@ -7,14 +7,21 @@ export default function Public() {
     user: {
       username
     },
-    sounds
+    sounds,
+    playSound,
+    pauseSound,
+    downloadSound,
   } = useContext(UserContext)
 
   return (
-    // console.log(sounds),
     <main className="public">
       <h1>Sounds</h1>
-      <SoundList sounds={sounds}/>
+      <SoundList
+      sounds={sounds}
+      playSound={playSound}
+      pauseSound={pauseSound}
+      downloadSound={downloadSound}
+      />
     </main>
   )
 }

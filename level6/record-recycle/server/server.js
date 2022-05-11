@@ -4,10 +4,15 @@ require('dotenv').config()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const { expressjwt: jwt } = require('express-jwt')
+const bodyParser = require("body-parser");
+const fileupload = require("express-fileupload");
+
 
 
 app.use(express.json())
 app.use(morgan('dev'))
+
+app.use(fileupload());
 
 mongoose.connect('mongodb://localhost:27017/Record-Recycle', ()=> console.log("Mongoose Connected to DB"))
 

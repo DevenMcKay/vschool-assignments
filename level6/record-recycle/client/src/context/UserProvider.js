@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 // import {staticSound, staticUser} from '../component/staticData/staticData'
+import FileDownload from "js-file-download"
 
 export const UserContext = React.createContext()
-
 
 const userAxios = axios.create()
 userAxios.interceptors.request.use(config => {
@@ -74,22 +74,57 @@ export default function UserProvider(props) {
   function addSound(newSound) {
     userAxios.post("/api/sound", newSound)
       .then(res => {
-        setSounds(prevState=>[...prevState, res.data])
+        setSounds(prevState => [...prevState, res.data])
       })
       .catch(err => console.log(err))
   }
 
+  function deleteSound(soundId) {
+    userAxios.delete(`/api/sound/${soundId}`)
+      .then(res => {
+        const filteredArr = sounds.filter(sound => {
+          if (soundId !== sound._id) {
+            return sound
+          } else return null
+        })
+        setSounds(filteredArr)
+      })
+      .catch(err => console.log(err))
+  }
+  
+  function downloadSound(title, fileName) {
+    userAxios.get(`/api/sound/download/${fileName}`,
+    // RETURNS BLOB OBJECT
+      { responseType: 'blob' }
+    ).then(res => FileDownload(res.data, `${title}.mp3`))
+      .catch(err => (console.log(err)))
+  }
 
+  function playSound(fileName) {
+    userAxios.post(`/api/sound/play/${fileName}`)
+      .then(console.log("Play"))
+      .catch(err => console.log(err))
+  }
+
+  function pauseSound(fileName) {
+    userAxios.post(`/api/sound/pause/${fileName}`)
+      .then(console.log("Pause"))
+      .catch(err => console.log(err))
+  }
 
   return (
     <UserContext.Provider
       value={{
         ...userState,
+        sounds,
         logout,
         signup,
         login,
         addSound,
-        sounds
+        deleteSound,
+        playSound,
+        pauseSound,
+        downloadSound
       }}>
       {props.children}
     </UserContext.Provider>
