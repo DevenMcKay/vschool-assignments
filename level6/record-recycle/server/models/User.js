@@ -37,7 +37,7 @@ userSchema.pre("save", function (next) {
 // METHOD TO CHECK ENCRYPTED PASSWORD ON LOGIN
 userSchema.methods.checkPassword = function (passwordAttempt, cb) {
   bcrypt.compare(passwordAttempt, this.password, (err, isMatch) => {
-    if (err) return cb(err)
+    if (err){ return cb(err)}
     return cb(null, isMatch)
   })
 }

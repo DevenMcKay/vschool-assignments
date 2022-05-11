@@ -4,13 +4,12 @@ export default function AuthForm(props) {
   const {
     inputs: {
       username,
-      password
+      password,
     },
     handleChange,
     handleSubmit,
-    btnText
-
-
+    btnText,
+    errMsg
   } = props
 
   return (
@@ -29,6 +28,7 @@ export default function AuthForm(props) {
         placeholder="Password"
         onChange={handleChange}
       />
+      <p className='errMsg'>{errMsg}</p>
       <button>{btnText}</button>
     </form>
   )

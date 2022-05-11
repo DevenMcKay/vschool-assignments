@@ -13,7 +13,6 @@ userAxios.interceptors.request.use(config => {
 })
 
 export default function UserProvider(props) {
-
   const initState = {
     user: JSON.parse(localStorage.getItem("user")) || {},
     token: localStorage.getItem("token") || "",
@@ -45,7 +44,7 @@ export default function UserProvider(props) {
           user
         }))
       })
-      .catch(err => console.log(err))
+      .catch(err => handleAuthErr(err.response.data.errMsg))
   }
 
   function login(cred) {
@@ -61,7 +60,21 @@ export default function UserProvider(props) {
           user
         }))
       })
-      .catch(err => console.log(err))
+      .catch(err => handleAuthErr(err.response.data.errMsg))
+  }
+
+  function handleAuthErr(errMsg) {
+    setUserState(prevUserState => ({
+      ...prevUserState,
+      errMsg
+    }))
+  }
+
+  function resetAuthErr() {
+    setUserState(prevState => ({
+      ...prevState,
+      errMsg: ""
+    }))
   }
 
   function getAllSounds() {
@@ -124,7 +137,8 @@ export default function UserProvider(props) {
         deleteSound,
         playSound,
         pauseSound,
-        downloadSound
+        downloadSound,
+        resetAuthErr
       }}>
       {props.children}
     </UserContext.Provider>

@@ -6,7 +6,7 @@ const initInputs = { username: "", password: "" }
 
 export default function Auth() {
 
-  const {signup,login} = useContext(UserContext)
+  const {signup,login, resetAuthErr, errMsg} = useContext(UserContext)
 
   const [inputs, setInputs] = useState(initInputs)
   const [toggle, setToggle] = useState(false)
@@ -29,6 +29,13 @@ export default function Auth() {
     login(inputs)
   }
 
+
+  function toggleForm() {
+    setToggle(prev => !prev)
+    resetAuthErr()
+  }
+
+
   return (
     <main className="auth">
       <h1>Engage In Sound</h1>
@@ -39,8 +46,9 @@ export default function Auth() {
             handleSubmit={handleSignup}
             inputs={inputs}
             btnText="Sign Up"
+            errMsg={errMsg}
           />
-          <p onClick={() => setToggle(prev => !prev)}>Login Page</p>
+          <p className='toggleForm' onClick={toggleForm}>Login Page</p>
         </>
         :
         <>
@@ -49,8 +57,9 @@ export default function Auth() {
             handleSubmit={handleLogin}
             inputs={inputs}
             btnText="Login"
+            errMsg={errMsg}
           />
-          <p onClick={() => setToggle(prev => !prev)}>Become A Member!</p>
+          <p className='toggleForm'onClick={toggleForm}>Become A Member!</p>
         </>
       }
 

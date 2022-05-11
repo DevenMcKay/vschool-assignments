@@ -59,7 +59,7 @@ export default function Sound(props) {
           {soundDeleteBtn()}
         </div>
         <p className="description">{description}</p>
-        <p>{username}</p>
+        <p>Patron: {username}</p>
         <div className="tags">
           {mapTags}
         </div>
