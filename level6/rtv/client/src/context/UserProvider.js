@@ -12,7 +12,7 @@ userAxios.interceptors.request.use(config => {
 })
 
 export default function UserProvider(props) {
-  
+
   const initState = {
     user: JSON.parse(localStorage.getItem("user")) || {},
     token: localStorage.getItem('token') || "",
@@ -31,7 +31,7 @@ export default function UserProvider(props) {
 
   function sortByVotes() {
     issueList && issueList.sort((a, b) => {
-      return a.votes - b.votes
+      return b.votes - a.votes
     })
   }
 
@@ -170,7 +170,7 @@ export default function UserProvider(props) {
         return setUserErr("User already voted")
       } else if (issue._id === votedIssue) {
         setUserErr("")
-       return userAxios.put(`api/issue/downvote/${votedIssue}`)
+        return userAxios.put(`api/issue/downvote/${votedIssue}`)
           .then(res => {
             const updatedIssueArr = issueList.map(issue => {
               if (votedIssue === issue._id) {
