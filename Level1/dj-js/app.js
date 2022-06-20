@@ -26,16 +26,17 @@ window.addEventListener("wheel" , function() {
   change.style.backgroundColor = "orange"
 })
 
-document.addEventListener("keydown", function() {
-  if (event.which === 66){
+document.addEventListener("keydown", function(event) {
+  // console.log(event.key)
+  if (event.key === "b"){
     change.style.backgroundColor = "blue"
-  } else if (event.which === 82){
+  } else if (event.key === "r"){
     change.style.backgroundColor = "red"
-  } else if (event.which === 89){
+  } else if (event.key === "y"){
     change.style.backgroundColor = "yellow"
-  } else if (event.which === 71){
+  } else if (event.key === "g"){
     change.style.backgroundColor = "green"
-  } else if (event.which === 79){
+  } else if (event.key === "o"){
     change.style.backgroundColor = "orange"
   } else {
     //Defualt Color / State
