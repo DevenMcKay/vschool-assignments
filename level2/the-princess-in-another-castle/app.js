@@ -4,23 +4,29 @@ class Player {
     this.totalCoins = totalCoins
     this.status = status
     this.hasStar = hasStar
+    //marioGame added as array tester
+    this.marioGame = ["MarioLand", "LuigiWorld"]
     this.setName()
     this.namePicked = this.name
     this.gameActive = true;
     this.print()
-  } // End Initial 
-  setName(namePicked) {
+  } // End Initial
+
+  setName() {
     if (this.namePicked !== "Mario" || this.namePicked !== "Luigi") {
       let randomNumber = Math.floor(Math.random() * 2)
       if (randomNumber === 0) {
         console.log("🟥 Mario Selected")
+        this.marioGame = this.marioGame[0]
         this.name = "Mario"
       } else if (randomNumber === 1) {
         console.log("🟩 Luigi Selected")
+        this.marioGame = this.marioGame[1]
         this.name = "Luigi"
       }
     }
   } // End SetName()
+
   gotHit() {
     // const {status} = this;
     if (this.status === "Powered Up" && this.hasStar === true) {
@@ -35,6 +41,7 @@ class Player {
       this.gameActive = false
     }
   } // End gotHit()
+
   gotPowerup() {
     if (this.status === "Powered Up" && this.hasStar === true) {
       console.log(`🌟 Already Star Protected`)
@@ -47,18 +54,22 @@ class Player {
       this.status = "Big"
     }
   } // End Powerup()
+
   addCoin() {
     this.totalCoins++
   } // End addCoin()
+
   print() {
     console.log(`
   Name: ${this.name}
   Status: ${this.status}
-  Coins: ${this.totalCoins}`)
+  Coins: ${this.totalCoins}
+  Mario Game: ${this.marioGame}`)
   } // End Print()
-}
 
-// Create Player
+} // Closes player class
+
+// Create Player (runs first)
 const player = new Player("", 0, "Big", false)
 
 // Chooses Random Hit(), Power Up(), or Coin()
@@ -85,7 +96,7 @@ roll = () => {
 
 // Rolls Action Chance Every Second
 const intervalID = setInterval(function () {
-  console.log("") // Breaks Lines
+  console.log("----------------------") // Breaks Lines
   roll()
 }, 1000)
 
