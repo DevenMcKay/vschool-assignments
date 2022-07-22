@@ -203,3 +203,48 @@ const { METHODS } = require("http")
 //   console.log(fizzBuzz)
 // }
 // numStr()
+
+// 16.Simple Loop to array
+// var numbersArr = [23, 64, 20,33,40, 100, 30,50, 2]
+// let newArr = []
+// for (i = 0; i < numbersArr.length; i++) {
+//   if (numbersArr[i] % 2 !== 0) {
+//     newArr.push(numbersArr[i])
+//   }
+// }
+// console. log (newArr)
+
+// 17.Add to array of object
+// var users = [
+//   {
+//     name: "Sophie",
+//     age: 12
+//   },
+//   {
+//     name: "Larry",
+//     age: 32
+//   },
+//   {
+//     name: "Cathy",
+//     age:
+//       40
+//   }]
+//   // const isAdmin = users.map(item=>({...item,isAdmin:true}))
+//  users.forEach(item=>(item.isAdmin=true))
+//   console.log(users)
+
+// // 18. Building nested arrays
+// let zeros = []
+// for (i = 0; i < 3; i++) {
+//   zeros[i] = []
+//   for (j = 0; j < 3; j++) {
+//     zeros[i][j] = 0;
+//   }}
+//   console.log(zeros)
+
+// // 19.setTimout 
+// console.log(1)
+// setTimeout(()=>console.log(2), 0)
+// console.log(3)
+// console.log(2+5+10)
+

@@ -23,3 +23,18 @@
   }
 
 } 
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.border {
+  border: solid black 2px;
+}
+.see {
+  opacity: .5;
+}
