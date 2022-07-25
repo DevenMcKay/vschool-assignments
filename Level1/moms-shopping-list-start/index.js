@@ -6,60 +6,50 @@ addItem.addEventListener("submit", function (event) {
   event.preventDefault()
   let item = addItem.title.value
   let li = document.createElement("li")
-  const listed = li.innerHTML += `<li><div>${item}</div><button class="edit">edit</button><button class="delete">X</button></li>`
+  li.innerHTML += `<li id="listItem"><div><p>${item}</p><p id='quantityAmount'></p></div><div><button id="edit" value="edit">Edit</button><button id="delete">X</button></div></li>`
   list.append(li)
 
   //Clears User Input
   addItem.title.value = ""
 
   // .querySelector and getByElementsByClassName() return an Array-like NodeList 
-  // (this applies click funtions to .delete buttons) and removes li on delete
-  const deleteItemBtn = document.querySelectorAll(".delete")
+  // (this applies click functions to .delete buttons) and removes li on delete
+  const deleteItemBtn = document.querySelectorAll("#delete")
+
   deleteItemBtn.forEach(function (e) {
     e.addEventListener(`click`, function () {
-      this.parentElement.parentElement.remove("li")
+      this.parentElement.parentElement.parentElement.remove()
     });
   })
 
-  // OnClick creates edit form
-  const editItemBtn = document.querySelectorAll(".edit")
+  // OnClick creates edit form (edit button capture per list item)
+  const editItemBtn = li.querySelectorAll("#edit")
   editItemBtn.forEach(function (e) {
+
     e.addEventListener(`click`, function () {
-      this.innerHTML = "<input class='editBtn' type='button' value='save' form='quantity'/>"
-      this.parentElement.innerHTML += "<form id='quantity'><input type='number'></form>"
+      // Changes button function
+      if (editItemBtn[0].value === "edit") {
+        this.value = "save"
+        this.textContent = "Save"
+        this.type = "submit"
+        this.form = "quantity"
 
-      // New Save Button
-      const editBtn = document.querySelectorAll(".editBtn")
-      editBtn.forEach(function (e) {
-        e.addEventListener(`click`, function () {
-          this.value = "edit"
-          // console.log(this.quantity.value)
+        //New Quantity Form
+        let form = document.createElement("form")
+        form.innerHTML += `<form><input id='quantity' type='number' value=${li.querySelector("#quantityAmount").textContent} placeholder='Enter Quantity...'></form>`
+        li.append(form)
+      }
 
-        }
-        )
-      })
+      else if (editItemBtn[0].value === "save") {
+        // Capture para textContent and form value to fill
+        const quantity = li.querySelector("#quantity")
+        let quantityAmount = li.querySelector("#quantityAmount")
+        this.value = "edit"
+        this.textContent = "Edit"
+        quantityAmount.textContent = quantity.value
+        quantity.remove("form")
+      }
+    })
 
-
-    });
-  });
-
+  })
 })
-
-
-
-
-
-// Attempt to get delete btn w/o class
-// const deleteItemBtn = document.querySelector("li > button:nth-of-type(2)")
-
-
-// const deleteItemBtn = document.querySelectorAll(".delete");
-// for (i = 0; i < deleteItemBtn.length; i++){
-//   deleteItemBtn[i].style.backgroundColor = "red"; 
-// }
-
-
-// deleteItemBtn.addEventListener("click", function(){
-//   console.log("delete")
-// })
-

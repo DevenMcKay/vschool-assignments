@@ -1,4 +1,42 @@
+body {
+    box-sizing: border-box;
+}
+
+p {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    font-size: 1.8rem;
+}
+
+li>div:nth-of-type(1) {
+    display: flex;
+    min-width: 140px;
+    gap: 1rem;
+}
+
+li>div:nth-of-type(2) {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+div p:nth-of-type(1) {
+    text-align: left;
+    width: 50%;
+
+}
+
+div p:nth-of-type(2) {
+    text-align: right;
+    width: 50%;
+}
+
 .title {
+    text-align: center;
+}
+
+form {
     text-align: center;
 }
 
@@ -8,11 +46,12 @@
     margin: auto;
 }
 
-#add-item {
-    border: 1px solid black;
+#add-todo {
+    align-items: center;
+    text-align: center;
 }
 
-.input {
+#title.input {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -29,9 +68,11 @@
 #list {
     flex-direction: column;
     display: flex;
+    text-decoration: none;
+    padding: 0;
 }
 
-#list > li{
+#list>li {
     list-style-type: none;
     margin: 10px auto;
 }
@@ -41,10 +82,18 @@
     text-align: center;
 }
 
-.delete {
-    
+li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.edit {
+input[type="button"] {
+    padding: 3px 6px;
+}
+
+li button {
+    padding: 3px 6px;
+
 
 }

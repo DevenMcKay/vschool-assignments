@@ -248,3 +248,44 @@ const { METHODS } = require("http")
 // console.log(3)
 // console.log(2+5+10)
 
+// 20. JSON
+// const obj = {first: "1", "two": 2, "three": true}
+// console.log(JSON.stringify(obj))
+
+// 21.Error 
+
+// if(2===2){
+//   throw new Error("Hey I'm an error")
+// }
+
+// try {
+//   if(2===2){
+//     throw "Hey I'm an error"
+
+//   }
+// }
+// catch(err){
+//   console.log("Error")
+// }
+// finally {
+//   console.log("I always run")
+// }
+
+// 21.sort
+// let eighteen = [
+//   { lastName: "ill", firstname: "tom" },
+//   { lastName: "bill", firstname: "tom" },
+//   { lastName: "will", firstname: "tom" }
+// ]
+
+// let alpha = eighteen.sort(function (a, b) {
+//   // sorts alphabetically by providing alpha values to compare
+//   if (a.lastName < b.lastName) {
+//     return -1
+//   }
+//   if (a.lastName > b.LastName) {
+//     return 1
+//   }
+//   return 0
+// })
+// console.log(alpha)
