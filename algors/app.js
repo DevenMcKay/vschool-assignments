@@ -1,16 +1,20 @@
 // 1.Object/Array Mix
-// const numbers = [0,"one", "2"]
+const numbers = [0,"one", "2"]
 
-const { METHODS } = require("http")
+// const { METHODS } = require("http")
 
-// // const obj = Object.assign({},numbers)
+// const obj = Object.assign({},numbers)
 // const obj = {...numbers}
+// console.log(obj)
 
-// // const arr = Object.values(obj)
-// const arr = Object.keys(obj)
+// // Returns array pairs, values, and keys
+// const obj2 = [`zero`,1,"two",[3]]
+// const arr = Object.entries(obj2)
+// const arr = Object.values(obj2)
+// const arr = Object.keys(obj2)
 // console.log(arr)
 
-// 2.Objects keys values and entries 
+// Objects keys, values, and entries 
 // const animal = {
 //   first: 'The',
 //   last: 'Lion'
@@ -18,6 +22,7 @@ const { METHODS } = require("http")
 //   const propertyNames=Object.keys(animal);
 //   console.log(propertyNames);
 
+// // 2. loop thru array 
 // function loopThroughArr(number){
 //   for(var i = 0; i < number.length; i++){
 //        if(number[i] % 2 === 0){
@@ -74,7 +79,7 @@ const { METHODS } = require("http")
 // 8.Array sort
 // const largest = [3, 5, 2, 8, 1]
 // console.log(
-// largest.sort((a, b) =>b-a))
+// largest.sort((a, b) =>a-b))
 // //Array reordered
 // console.log (largest[0])
 
