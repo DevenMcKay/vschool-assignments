@@ -40,7 +40,7 @@ node app.js
 const readline = require("readline-sync");
 
 const player = {
-  name: (null),
+  name: null,
   hearts: ["❤️ "],
   inventory: ["EMPTY"],
   health: 10,
@@ -246,10 +246,10 @@ function beastStrike() {
 function beastDie() {
   console.log(beast.hearts[3] + " The beast is dead!")
   player.level += 1
-  trasure()
+  treasure()
 }
 
-function trasure() {
+function treasure() {
   // Inventory Tells Player Level
   console.log("🧙 The beast has dropped an item...")
   if (player.level === 1) {
