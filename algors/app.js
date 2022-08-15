@@ -294,3 +294,38 @@ const numbers = [0,"one", "2"]
 //   return 0
 // })
 // console.log(alpha)
+
+// 22.update objects
+
+// const backpack = {
+//   name: "Everyday Backpack",
+//   volume: 30,
+//   color: "grey",
+//   pocketNum: 15,
+//   strapLength: {
+//     left: 26,
+//     right: 26,
+//   },
+//   changeName(newName){
+//     this.name = newName
+//   },
+//   changeVol(newVol){
+//     this.volume = parseInt(newVol)
+//   },
+//   changeColor(newColor){
+//     this.color= newColor
+//   },
+//   changePocketNum(newPocketNum){
+//     this.pocketNum = newPocketNum
+//   },
+//   toggleLid: function (lidStatus) {
+//     this.lidOpen = lidStatus;
+//   },
+//   newStrapLength: function (lengthLeft, lengthRight) {
+//     this.strapLength.left = lengthLeft;
+//     this.strapLength.right = lengthRight;
+//   },
+// };
+
+// backpack.changeColor("red")
+// backpack.changeName("Blackpack")
