@@ -1,0 +1,97 @@
+.cardHeader > input {
+  transform: scale(2);
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cardHeader input, .cardHeader h1 {
+  margin: auto 1rem;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100vw;
+  justify-content: space-around;
+}
+
+.card {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 20vw;
+  background-color: rgb(40, 40, 40);
+  border-radius: 20px;
+  border: solid white 2px;
+  padding: 1rem;
+  min-width: 11rem;
+}
+
+.theme-blue {
+  background-color: rgb(0, 0, 211);
+}
+
+.theme-red {
+  background-color: rgb(227, 15, 0);
+}
+
+.isDeadLabel {
+  text-align: left;
+  display: inline;
+  margin: 0;
+}
+
+.ImgContainer > img {
+  margin: 1rem auto .5rem;
+  width: 10rem;
+  height: 10rem;
+  min-width: 10rem;
+  min-height: 10rem;
+  object-fit: cover;
+  border: solid white 3px;
+  border-radius: 20px;
+}
+
+.ImgContainer {
+  overflow: hidden;
+  
+}
+
+.nameContainer h1 {
+  margin: .5rem;
+}
+
+.type {
+  margin-top: .4rem;
+}
+
+.buttonContainer {
+  margin-top: 0rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttonContainer button {
+  width: 40%;
+  height: 2rem;
+  border-radius: 8px;
+}
+
+.cover {
+  margin: 0 0 -19rem;
+  position: relative;
+  top: -15.2rem;
+  height: 19rem;
+  background-image: url(./target.png);
+  background-size: 9rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: .9;
+}
+
