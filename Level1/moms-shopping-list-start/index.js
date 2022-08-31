@@ -1,6 +1,13 @@
 // const list = document.getElementById("List")
 const list = document.getElementById("list")
 
+// setAttribute example
+const main = document.querySelector(".main")
+main.setAttribute("id","ZZZZZ")
+
+const newColor = document.querySelector("#ZZZZZ")
+newColor.style.backgroundColor = "red"
+
 //Input text is added to list
 addItem.addEventListener("submit", function (event) {
   event.preventDefault()
