@@ -329,3 +329,15 @@ const numbers = [0,"one", "2"]
 
 // backpack.changeColor("red")
 // backpack.changeName("Blackpack")
+
+//Bonus Cap after space in paragraph
+// function capitalize(words) {
+//   let eachWord = words.split(" ")
+//   str=""
+//   let caps = []
+//   const newArr = eachWord.map(item=>{
+//     return item[0].toUpperCase() + item.substr(1)  
+//   })
+//   return newArr
+//   }
+//   console.log(capitalize("hey friends! practice practice practice!"))
