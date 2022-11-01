@@ -338,6 +338,6 @@ const numbers = [0,"one", "2"]
 //   const newArr = eachWord.map(item=>{
 //     return item[0].toUpperCase() + item.substr(1)  
 //   })
-//   return newArr
+//   return newArr.join(" ")
 //   }
 //   console.log(capitalize("hey friends! practice practice practice!"))
